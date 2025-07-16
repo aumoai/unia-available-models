@@ -1,0 +1,105 @@
+{
+    "providers": [
+        {
+            "name": "OpenAI",
+            "displayName": "OpenAI",
+            "base_model_name": "openai",
+            "credentials_needed": {
+                "openai_api_key": {
+                    "type": "string",
+                    "displayName": "API Key",
+                    "description": "OpenAI API Key",
+                    "required": true
+                }
+            }
+        },
+        {
+            "name": "Bedrock",
+            "displayName": "AWS Bedrock",
+            "base_model_name": "bedrock",
+            "credentials_needed": {
+                "aws_access_key_id": {
+                    "type": "string",
+                    "displayName": "AWS Access Key ID",
+                    "description": "AWS Access Key ID for account with permission to use Bedrock.",
+                    "required": true
+                },
+                "aws_secret_access_key": {
+                    "type": "string",
+                    "displayName": "AWS Secret Access Key",
+                    "description": "AWS Secret Access Key",
+                    "required": true
+                }
+            }
+        },
+        {
+            "name": "Azure AI",
+            "displayName": "Azure",
+            "base_model_name": "azure_ai",
+            "credentials_needed": {
+                "api_key": {
+                    "type": "string",
+                    "displayName": "API Key",
+                    "description": "Azure API Key",
+                    "required": true
+                },
+                "base_url": {
+                    "type": "string",
+                    "displayName": "Base URL",
+                    "description": "Azure AI Base URL",
+                    "required": true
+                }
+            }
+        },
+        {
+            "name": "Google AI",
+            "displayName": "Google AI",
+            "base_model_name": "gemini",
+            "credentials_needed": {
+                "api_key": {
+                    "type": "string",
+                    "displayName": "API Key",
+                    "description": "Gemini API Key",
+                    "required": true
+                }
+            }
+        },
+        {
+            "name": "Fireworks AI",
+            "displayName": "AumoGPT",
+            "base_model_name": "fireworks_ai",
+            "credentials_needed": {
+                "api_key": {
+                    "type": "string",
+                    "displayName": "API Key",
+                    "description": "Fireworks API Key",
+                    "required": true
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "name": "gpt-3.5-turbo",
+            "displayName": "GPT-3.5 Turbo",
+            "provider": "OpenAI",
+            "submodels": [
+                "gpt-3.5-turbo",
+                "gpt-3.5-turbo-0301",
+                "gpt-3.5-turbo-0613",
+                "gpt-3.5-turbo-1106",
+                "gpt-3.5-turbo-0125",
+                "gpt-3.5-turbo-2024-08-06",
+                "gpt-3.5-turbo-2024-05-13"
+            ],
+            "max_tokens": 4097,
+            "max_input_tokens": 8192,
+            "max_output_tokens": 4097,
+            "input_cost_per_token": 0.0000015,
+            "output_cost_per_token": 0.000002,
+            "supports_function_calling": true,
+            "supports_vision": true
+        }
+    ]
+
+}
