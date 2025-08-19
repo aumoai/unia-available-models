@@ -1,6 +1,61 @@
 {
     "providers": [
         {
+            "name": "Mock",
+            "displayName": "Mock",
+            "base_model_name": "mock",
+            "credentials_needed": {},
+            "models": [
+                {
+                    "name": "gpt-3.5-turbo",
+                    "displayName": "GPT-3.5 Turbo",
+                    "submodels": [
+                        "gpt-3.5-turbo",
+                        "gpt-3.5-turbo-0301",
+                        "gpt-3.5-turbo-0613",
+                        "gpt-3.5-turbo-1106",
+                        "gpt-3.5-turbo-0125",
+                        "gpt-3.5-turbo-2024-08-06",
+                        "gpt-3.5-turbo-2024-05-13"
+                    ],
+                    "max_tokens": 4097,
+                    "max_input_tokens": 8192,
+                    "max_output_tokens": 4097,
+                    "input_cost_per_token": 0.0000015,
+                    "output_cost_per_token": 0.000002,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "GPT-4o",
+                    "displayName": "GPT-4o",
+                    "submodels": [
+                        "gpt-4o",
+                        "gpt-4o-2024-08-06",
+                        "gpt-4o-2024-05-13",
+                        "gpt-4o-2024-11-20"
+                    ],
+                    "max_tokens": 16384,
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 16384,
+                    "input_cost_per_token": 0.0000025,
+                    "output_cost_per_token": 0.000010,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                }
+            ]
+
+
+
+
+
+
+
+
+
+
+        },
+        {
             "name": "OpenAI",
             "displayName": "OpenAI",
             "base_model_name": "openai",
@@ -12,6 +67,22 @@
                     "required": true
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         },
         {
             "name": "Bedrock",
@@ -31,6 +102,21 @@
                     "required": true
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         },
         {
             "name": "Azure AI",
@@ -50,6 +136,26 @@
                     "required": true
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         },
         {
             "name": "Google AI",
@@ -63,6 +169,25 @@
                     "required": true
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         },
         {
             "name": "Fireworks AI",
@@ -76,30 +201,67 @@
                     "required": true
                 }
             }
-        }
-    ],
-    "models": [
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        },
         {
-            "name": "gpt-3.5-turbo",
-            "displayName": "GPT-3.5 Turbo",
-            "provider": "OpenAI",
-            "submodels": [
-                "gpt-3.5-turbo",
-                "gpt-3.5-turbo-0301",
-                "gpt-3.5-turbo-0613",
-                "gpt-3.5-turbo-1106",
-                "gpt-3.5-turbo-0125",
-                "gpt-3.5-turbo-2024-08-06",
-                "gpt-3.5-turbo-2024-05-13"
-            ],
-            "max_tokens": 4097,
-            "max_input_tokens": 8192,
-            "max_output_tokens": 4097,
-            "input_cost_per_token": 0.0000015,
-            "output_cost_per_token": 0.000002,
-            "supports_function_calling": true,
-            "supports_vision": true
+            "name": "OCI",
+            "displayName": "Oracle OCI",
+            "base_model_name": "oci",
+            "credentials_needed": {
+                "key": {
+                    "type": "string",
+                    "displayName": "Private Key",
+                    "description": "Oracle Private Key",
+                    "required": true
+                },
+                "user": {
+                    "type": "string",
+                    "displayName": "User",
+                    "description": "Oracle User",
+                    "required": true
+                },
+                "region": {
+                    "type": "string",
+                    "displayName": "Region",
+                    "description": "Oracle Region",
+                    "required": true
+                }, 
+                "tenancy": {
+                    "type": "string",
+                    "displayName": "Tenancy",
+                    "description": "Oracle Tenancy",
+                    "required": true
+                },
+                "fingerprint": {
+                    "type": "string",
+                    "displayName": "Fingerprint",
+                    "description": "Oracle Fingerprint",
+                    "required": true
+                },
+                "compartment_id": {
+                    "type": "string",
+                    "displayName": "Compartment ID",
+                    "description": "Oracle Compartment ID",
+                    "required": true
+                }
+            }
         }
     ]
-
 }
