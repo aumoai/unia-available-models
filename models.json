@@ -7,35 +7,11 @@
             "credentials_needed": {},
             "models": [
                 {
-                    "name": "gpt-3.5-turbo",
-                    "displayName": "GPT-3.5 Turbo",
+                    "name": "mock",
+                    "displayName": "Mock Model",
                     "submodels": [
-                        "gpt-3.5-turbo",
-                        "gpt-3.5-turbo-0301",
-                        "gpt-3.5-turbo-0613",
-                        "gpt-3.5-turbo-1106",
-                        "gpt-3.5-turbo-0125",
-                        "gpt-3.5-turbo-2024-08-06",
-                        "gpt-3.5-turbo-2024-05-13"
+                        "mock"
                     ],
-                    "max_tokens": 4097,
-                    "max_input_tokens": 8192,
-                    "max_output_tokens": 4097,
-                    "input_cost_per_token": 0.0000015,
-                    "output_cost_per_token": 0.000002,
-                    "supports_function_calling": true,
-                    "supports_vision": true
-                },
-                {
-                    "name": "GPT-4o",
-                    "displayName": "GPT-4o",
-                    "submodels": [
-                        "gpt-4o",
-                        "gpt-4o-2024-08-06",
-                        "gpt-4o-2024-05-13",
-                        "gpt-4o-2024-11-20"
-                    ],
-                    "max_tokens": 16384,
                     "max_input_tokens": 128000,
                     "max_output_tokens": 16384,
                     "input_cost_per_token": 0.0000025,
@@ -66,8 +42,214 @@
                     "description": "OpenAI API Key",
                     "required": true
                 }
-            }
-
+            },
+            "models": [
+                {
+                    "name": "GPT-4o",
+                    "displayName": "GPT-4o",
+                    "submodels": [
+                        "gpt-4o",
+                        "gpt-4o-2024-08-06",
+                        "gpt-4o-2024-05-13",
+                        "gpt-4o-2024-11-20"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 16384,
+                    "input_cost_per_token": 0.0000025,
+                    "output_cost_per_token": 0.00001,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "GPT-4o mini",
+                    "displayName": "GPT-4o mini",
+                    "submodels": [
+                        "gpt-4o-mini",
+                        "gpt-4o-mini-2024-07-18",
+                        "gpt-4o-mini-2024-08-06",
+                        "gpt-4o-mini-2024-05-13"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 16384,
+                    "input_cost_per_token": 0.00000015,
+                    "output_cost_per_token": 0.00000060,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "GPT-4 Turbo",
+                    "displayName": "GPT-4 Turbo",
+                    "submodels": [
+                        "gpt-4-turbo",
+                        "gpt-4-turbo-2024-04-09"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.00001,
+                    "output_cost_per_token": 0.00003,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "GPT-4 Turbo Preview",
+                    "displayName": "GPT-4 Turbo Preview",
+                    "submodels": [
+                        "gpt-4-turbo-preview",
+                        "gpt-4-1106-preview",
+                        "gpt-4-0125-preview"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.00001,
+                    "output_cost_per_token": 0.00003,
+                    "supports_function_calling": true,
+                    "supports_vision": false
+                },
+                {
+                    "name": "GPT-4",
+                    "displayName": "GPT-4",
+                    "submodels": [
+                        "gpt-4",
+                        "gpt-4-0314",
+                        "gpt-4-0613"
+                    ],
+                    "max_input_tokens": 8192,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.00003,
+                    "output_cost_per_token": 0.00006,
+                    "supports_function_calling": true,
+                    "supports_vision": false
+                },
+                {
+                    "name": "GPT-4 32k",
+                    "displayName": "GPT-4 32k",
+                    "submodels": [
+                        "gpt-4-32k",
+                        "gpt-4-32k-0314",
+                        "gpt-4-32k-0613"
+                    ],
+                    "max_input_tokens": 32768,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.00006,
+                    "output_cost_per_token": 0.00012,
+                    "supports_function_calling": false,
+                    "supports_vision": false
+                },
+                {
+                    "name": "GPT-4 Vision",
+                    "displayName": "GPT-4 Vision",
+                    "submodels": [
+                        "gpt-4-vision-preview",
+                        "gpt-4-1106-vision-preview"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.00001,
+                    "output_cost_per_token": 0.00003,
+                    "supports_function_calling": false,
+                    "supports_vision": true
+                },
+                {
+                    "name": "GPT-3.5 Turbo",
+                    "displayName": "GPT-3.5 Turbo",
+                    "submodels": [
+                        "gpt-3.5-turbo",
+                        "gpt-3.5-turbo-0301",
+                        "gpt-3.5-turbo-0613",
+                        "gpt-3.5-turbo-1106",
+                        "gpt-3.5-turbo-0125"
+                    ],
+                    "max_input_tokens": 4097,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.0000015,
+                    "output_cost_per_token": 0.000002,
+                    "supports_function_calling": true,
+                    "supports_vision": false
+                },
+                {
+                    "name": "GPT-3.5 Turbo 16k",
+                    "displayName": "GPT-3.5 Turbo 16k",
+                    "submodels": [
+                        "gpt-3.5-turbo-16k",
+                        "gpt-3.5-turbo-16k-0613"
+                    ],
+                    "max_input_tokens": 16385,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.000003,
+                    "output_cost_per_token": 0.000004,
+                    "supports_function_calling": false,
+                    "supports_vision": false
+                },
+                {
+                    "name": "o1",
+                    "displayName": "o1",
+                    "submodels": [
+                        "o1",
+                        "o1-2024-12-17"
+                    ],
+                    "max_input_tokens": 200000,
+                    "max_output_tokens": 100000,
+                    "input_cost_per_token": 0.000015,
+                    "output_cost_per_token": 0.00006,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "o1-preview",
+                    "displayName": "o1-preview",
+                    "submodels": [
+                        "o1-preview",
+                        "o1-preview-2024-09-12"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 32768,
+                    "input_cost_per_token": 0.000015,
+                    "output_cost_per_token": 0.00006,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "o1-mini",
+                    "displayName": "o1-mini",
+                    "submodels": [
+                        "o1-mini",
+                        "o1-mini-2024-09-12"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 65536,
+                    "input_cost_per_token": 0.0000011,
+                    "output_cost_per_token": 0.0000044,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                },
+                {
+                    "name": "o3-mini",
+                    "displayName": "o3-mini",
+                    "submodels": [
+                        "o3-mini",
+                        "o3-mini-2025-01-31"
+                    ],
+                    "max_input_tokens": 200000,
+                    "max_output_tokens": 100000,
+                    "input_cost_per_token": 0.0000011,
+                    "output_cost_per_token": 0.0000044,
+                    "supports_function_calling": true,
+                    "supports_vision": false
+                },
+                {
+                    "name": "chatgpt-4o-latest",
+                    "displayName": "chatgpt-4o-latest",
+                    "submodels": [
+                        "chatgpt-4o-latest"
+                    ],
+                    "max_input_tokens": 128000,
+                    "max_output_tokens": 4096,
+                    "input_cost_per_token": 0.000005,
+                    "output_cost_per_token": 0.000015,
+                    "supports_function_calling": true,
+                    "supports_vision": true
+                }
+            ]
 
 
 
