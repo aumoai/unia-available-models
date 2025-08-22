@@ -7,7 +7,6 @@
             "credentials_needed": {},
             "models": [
                 {
-                    "name": "mock",
                     "displayName": "Mock Model",
                     "submodels": [
                         "mock" 
@@ -35,7 +34,6 @@
             },
             "models": [
                 {
-                    "name": "GPT-4o",
                     "displayName": "GPT-4o",
                     "submodels": [
                         "gpt-4o",
@@ -51,7 +49,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "GPT-4o mini",
                     "displayName": "GPT-4o mini",
                     "submodels": [
                         "gpt-4o-mini",
@@ -67,7 +64,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "GPT-4 Turbo",
                     "displayName": "GPT-4 Turbo",
                     "submodels": [
                         "gpt-4-turbo",
@@ -81,7 +77,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "GPT-4 Turbo Preview",
                     "displayName": "GPT-4 Turbo Preview",
                     "submodels": [
                         "gpt-4-turbo-preview",
@@ -96,7 +91,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT-4",
                     "displayName": "GPT-4",
                     "submodels": [
                         "gpt-4",
@@ -111,7 +105,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT-4 32k",
                     "displayName": "GPT-4 32k",
                     "submodels": [
                         "gpt-4-32k",
@@ -126,7 +119,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT-4 Vision",
                     "displayName": "GPT-4 Vision",
                     "submodels": [
                         "gpt-4-vision-preview",
@@ -140,7 +132,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "GPT-3.5 Turbo",
                     "displayName": "GPT-3.5 Turbo",
                     "submodels": [
                         "gpt-3.5-turbo",
@@ -157,7 +148,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT-3.5 Turbo 16k",
                     "displayName": "GPT-3.5 Turbo 16k",
                     "submodels": [
                         "gpt-3.5-turbo-16k",
@@ -171,7 +161,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "o1",
                     "displayName": "o1",
                     "submodels": [
                         "o1",
@@ -185,7 +174,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "o1-preview",
                     "displayName": "o1-preview",
                     "submodels": [
                         "o1-preview",
@@ -199,7 +187,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "o1-mini",
                     "displayName": "o1-mini",
                     "submodels": [
                         "o1-mini",
@@ -213,7 +200,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "o3-mini",
                     "displayName": "o3-mini",
                     "submodels": [
                         "o3-mini",
@@ -227,7 +213,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "chatgpt-4o-latest",
                     "displayName": "chatgpt-4o-latest",
                     "submodels": [
                         "chatgpt-4o-latest"
@@ -261,7 +246,6 @@
             },
             "models": [
                 {
-                    "name": "Jamba Instruct",
                     "displayName": "Jamba Instruct",
                     "submodels": ["ai21.jamba-instruct-v1:0"],
                     "max_input_tokens": 70000,
@@ -272,7 +256,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Jamba 1.5 Large",
                     "displayName": "Jamba 1.5 Large",
                     "submodels": ["ai21.jamba-1-5-large-v1:0"],
                     "max_input_tokens": 256000,
@@ -283,7 +266,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Jamba 1.5 Mini",
                     "displayName": "Jamba 1.5 Mini",
                     "submodels": ["ai21.jamba-1-5-mini-v1:0"],
                     "max_input_tokens": 256000,
@@ -294,7 +276,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Titan Text Lite",
                     "displayName": "Titan Text Lite",
                     "submodels": ["amazon.titan-text-lite-v1"],
                     "max_input_tokens": 42000,
@@ -305,7 +286,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Titan Text Express",
                     "displayName": "Titan Text Express",
                     "submodels": ["amazon.titan-text-express-v1"],
                     "max_input_tokens": 42000,
@@ -316,7 +296,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Titan Text Premier",
                     "displayName": "Titan Text Premier",
                     "submodels": ["amazon.titan-text-premier-v1:0"],
                     "max_input_tokens": 42000,
@@ -327,7 +306,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Mistral 7B Instruct",
                     "displayName": "Mistral 7B Instruct",
                     "submodels": ["mistral.mistral-7b-instruct-v0:2"],
                     "max_input_tokens": 32000,
@@ -338,7 +316,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Mixtral 8x7B Instruct",
                     "displayName": "Mixtral 8x7B Instruct",
                     "submodels": ["mistral.mixtral-8x7b-instruct-v0:1"],
                     "max_input_tokens": 32000,
@@ -349,7 +326,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Mistral Large",
                     "displayName": "Mistral Large",
                     "submodels": ["mistral.mistral-large-2402-v1:0"],
                     "max_input_tokens": 32000,
@@ -360,7 +336,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Mistral Small",
                     "displayName": "Mistral Small",
                     "submodels": ["mistral.mistral-small-2402-v1:0"],
                     "max_input_tokens": 32000,
@@ -371,7 +346,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Claude 3 Sonnet",
                     "displayName": "Claude 3 Sonnet",
                     "submodels": ["us.anthropic.claude-3-sonnet-20240229-v1:0"],
                     "max_input_tokens": 200000,
@@ -382,7 +356,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Claude 3.5 Sonnet",
                     "displayName": "Claude 3.5 Sonnet",
                     "submodels": [
                         "us.anthropic.claude-3-5-sonnet-20240620-v1:0",
@@ -396,7 +369,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Claude 3 Haiku",
                     "displayName": "Claude 3 Haiku",
                     "submodels": ["us.anthropic.claude-3-haiku-20240307-v1:0"],
                     "max_input_tokens": 200000,
@@ -407,7 +379,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Claude 3.5 Haiku",
                     "displayName": "Claude 3.5 Haiku",
                     "submodels": ["us.anthropic.claude-3-5-haiku-20241022-v1:0"],
                     "max_input_tokens": 200000,
@@ -418,7 +389,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Claude 3 Opus",
                     "displayName": "Claude 3 Opus",
                     "submodels": ["us.anthropic.claude-3-opus-20240229-v1:0"],
                     "max_input_tokens": 200000,
@@ -429,7 +399,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Claude 3.7 Sonnet",
                     "displayName": "Claude 3.7 Sonnet",
                     "submodels": ["us.anthropic.claude-3-7-sonnet-20250219-v1:0"],
                     "max_input_tokens": 200000,
@@ -440,7 +409,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Command Text",
                     "displayName": "Command Text",
                     "submodels": ["cohere.command-text-v14"],
                     "max_input_tokens": 4096,
@@ -451,7 +419,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Command Light Text",
                     "displayName": "Command Light Text",
                     "submodels": ["cohere.command-light-text-v14"],
                     "max_input_tokens": 4096,
@@ -462,7 +429,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Command R+",
                     "displayName": "Command R+",
                     "submodels": ["cohere.command-r-plus-v1:0"],
                     "max_input_tokens": 128000,
@@ -473,7 +439,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Command R",
                     "displayName": "Command R",
                     "submodels": ["cohere.command-r-v1:0"],
                     "max_input_tokens": 128000,
@@ -484,7 +449,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 8B Instruct",
                     "displayName": "Llama3 8B Instruct",
                     "submodels": ["meta.llama3-8b-instruct-v1:0"],
                     "max_input_tokens": 8192,
@@ -495,7 +459,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 70B Instruct",
                     "displayName": "Llama3 70B Instruct",
                     "submodels": ["meta.llama3-70b-instruct-v1:0"],
                     "max_input_tokens": 8192,
@@ -506,7 +469,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 1-8B Instruct",
                     "displayName": "Llama3 1-8B Instruct",
                     "submodels": ["us.meta.llama3-1-8b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -517,7 +479,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 1-70B Instruct",
                     "displayName": "Llama3 1-70B Instruct",
                     "submodels": ["us.meta.llama3-1-70b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -528,7 +489,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 2-1B Instruct",
                     "displayName": "Llama3 2-1B Instruct",
                     "submodels": ["us.meta.llama3-2-1b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -539,7 +499,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 2-3B Instruct",
                     "displayName": "Llama3 2-3B Instruct",
                     "submodels": ["us.meta.llama3-2-3b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -550,7 +509,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama3 2-11B Instruct",
                     "displayName": "Llama3 2-11B Instruct",
                     "submodels": ["us.meta.llama3-2-11b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -561,7 +519,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Llama3 2-90B Instruct",
                     "displayName": "Llama3 2-90B Instruct",
                     "submodels": ["us.meta.llama3-2-90b-instruct-v1:0"],
                     "max_input_tokens": 128000,
@@ -593,7 +550,6 @@
             },
             "models": [
                 {
-                    "name": "deepseek",
                     "displayName": "Deepseek",
                     "submodels": [
                         "deepseek-r1",
@@ -607,7 +563,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "jamba-instruct",
                     "displayName": "Jamba Instruct",
                     "submodels": [
                         "jamba-instruct"
@@ -620,7 +575,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "mistral-nemo",
                     "displayName": "Mistral Nemo",
                     "submodels": [
                         "mistral-nemo"
@@ -633,7 +587,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "mistral-large",
                     "displayName": "Mistral Large",
                     "submodels": [
                         "mistral-large",
@@ -647,7 +600,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "mistral-small",
                     "displayName": "Mistral Small",
                     "submodels": [
                         "mistral-small",
@@ -661,7 +613,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Llama-3.2 11B Vision Instruct",
                     "displayName": "Llama-3.2 11B Vision Instruct",
                     "submodels": [
                         "Llama-3.2-11B-Vision-Instruct"
@@ -674,7 +625,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Llama-3.3 70B Instruct",
                     "displayName": "Llama-3.3 70B Instruct",
                     "submodels": [
                         "Llama-3.3-70B-Instruct"
@@ -687,7 +637,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Meta-Llama-3 70B Instruct",
                     "displayName": "Meta-Llama-3 70B Instruct",
                     "submodels": [
                         "Meta-Llama-3-70B-Instruct"
@@ -700,7 +649,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Meta-Llama-3.1 8B Instruct",
                     "displayName": "Meta-Llama-3.1 8B Instruct",
                     "submodels": [
                         "Meta-Llama-3.1-8B-Instruct"
@@ -713,7 +661,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Meta-Llama-3.1 70B Instruct",
                     "displayName": "Meta-Llama-3.1 70B Instruct",
                     "submodels": [
                         "Meta-Llama-3.1-70B-Instruct"
@@ -726,7 +673,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Meta-Llama-3.1 405B Instruct",
                     "displayName": "Meta-Llama-3.1 405B Instruct",
                     "submodels": [
                         "Meta-Llama-3.1-405B-Instruct"
@@ -739,7 +685,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-4-mini-instruct",
                     "displayName": "Phi-4-mini-instruct",
                     "submodels": [
                         "Phi-4-mini-instruct"
@@ -752,7 +697,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-4-multimodal-instruct",
                     "displayName": "Phi-4-multimodal-instruct",
                     "submodels": [
                         "Phi-4-multimodal-instruct"
@@ -765,7 +709,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Phi-4",
                     "displayName": "Phi-4",
                     "submodels": [
                         "Phi-4"
@@ -778,7 +721,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3.5-mini-instruct",
                     "displayName": "Phi-3.5-mini-instruct",
                     "submodels": [
                         "Phi-3.5-mini-instruct"
@@ -791,7 +733,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3.5-vision-instruct",
                     "displayName": "Phi-3.5-vision-instruct",
                     "submodels": [
                         "Phi-3.5-vision-instruct"
@@ -804,7 +745,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Phi-3.5-MoE-instruct",
                     "displayName": "Phi-3.5-MoE-instruct",
                     "submodels": [
                         "Phi-3.5-MoE-instruct"
@@ -817,7 +757,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3-mini-4k-instruct",
                     "displayName": "Phi-3-mini-4k-instruct",
                     "submodels": [
                         "Phi-3-mini-4k-instruct"
@@ -830,7 +769,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3-mini-128k-instruct",
                     "displayName": "Phi-3-mini-128k-instruct",
                     "submodels": [
                         "Phi-3-mini-128k-instruct"
@@ -843,7 +781,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3-small-8k-instruct",
                     "displayName": "Phi-3-small-8k-instruct",
                     "submodels": [
                         "Phi-3-small-8k-instruct"
@@ -856,7 +793,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Phi-3-small-128k-instruct",
                     "displayName": "Phi-3-small-128k-instruct",
                     "submodels": [
                         "Phi-3-small-128k-instruct"
@@ -884,7 +820,6 @@
             },
             "models": [
                 {
-                    "name": "Gemini 2.0 Flash",
                     "displayName": "Gemini 2.0 Flash",
                     "submodels": [
                         "gemini-2.0-flash",
@@ -898,7 +833,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 2.0 Flash Lite",
                     "displayName": "Gemini 2.0 Flash Lite",
                     "submodels": [
                         "gemini-2.0-flash-lite",
@@ -912,7 +846,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 2.0 Flash Exp",
                     "displayName": "Gemini 2.0 Flash Exp",
                     "submodels": [
                         "gemini-2.0-flash-exp"
@@ -925,7 +858,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 2.0 Flash Thinking Exp",
                     "displayName": "Gemini 2.0 Flash Thinking Exp",
                     "submodels": [
                         "gemini-2.0-flash-thinking-exp",
@@ -939,7 +871,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 1.5 Flash",
                     "displayName": "Gemini 1.5 Flash",
                     "submodels": [
                         "gemini-1.5-flash",
@@ -955,7 +886,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 1.5 Flash 8B",
                     "displayName": "Gemini 1.5 Flash 8B",
                     "submodels": [
                         "gemini-1.5-flash-8b",
@@ -970,7 +900,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 1.5 Pro",
                     "displayName": "Gemini 1.5 Pro",
                     "submodels": [
                         "gemini-1.5-pro",
@@ -988,7 +917,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini Pro Vision",
                     "displayName": "Gemini Pro Vision",
                     "submodels": [
                         "gemini-pro-vision"
@@ -1001,7 +929,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini Gemma 2",
                     "displayName": "Gemini Gemma 2",
                     "submodels": [
                         "gemini-gemma-2-27b-it"
@@ -1014,7 +941,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini Gemma 2 (9B)",
                     "displayName": "Gemini Gemma 2 (9B)",
                     "submodels": [
                         "gemini-gemma-2-9b-it"
@@ -1027,7 +953,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 2.5 Pro",
                     "displayName": "Gemini 2.5 Pro",
                     "submodels": [
                         "gemini-2.5-pro-preview-05-06",
@@ -1041,7 +966,6 @@
                     "supports_vision": true
                 },
                 {
-                    "name": "Gemini 2.5 Flash",
                     "displayName": "Gemini 2.5 Flash",
                     "submodels": [
                         "gemini-2.5-flash-preview-05-20",
@@ -1070,7 +994,6 @@
             },
             "models": [
                 {
-                    "name": "Llama-3.1 8B",
                     "displayName": "Llama-3.1 8B",
                     "submodels": [
                         "llama-v3p1-8b-instruct"
@@ -1083,7 +1006,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Deepseek v3",
                     "displayName": "Deepseek v3",
                     "submodels": [
                         "deepseek-v3"
@@ -1096,7 +1018,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT OSS 20B",
                     "displayName": "GPT OSS 20B",
                     "submodels": [
                         "gpt-oss-20b"
@@ -1109,7 +1030,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "GPT OSS 120b",
                     "displayName": "GPT OSS 120b",
                     "submodels": [
                         "gpt-oss-120b"
@@ -1122,7 +1042,6 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "AumoGPT 7b",
                     "displayName": "AumoGPT 7b",
                     "submodels": [
                         "accounts/admin-d353ad/deployedModels/aumogpt-7b-v1-hniaz8ub"
@@ -1180,7 +1099,6 @@
             },
             "models": [
                 {
-                    "name": "Grok 4",
                     "displayName": "Grok 4",
                     "submodels": [
                         "xai.grok-4"
@@ -1194,12 +1112,10 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Grok 3",
                     "displayName": "Grok 3",
                     "submodels": [
                         "xai.grok-3"
                     ],
-                    "max_tokens": 131072,
                     "max_input_tokens": 131072,
                     "max_output_tokens": 131072,
                     "input_cost_per_token": 3e-6,
@@ -1208,12 +1124,10 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Grok 3 Fast",
                     "displayName": "Grok 3 Fast",
                     "submodels": [
                         "xai.grok-3-fast"
                     ],
-                    "max_tokens": 131072,
                     "max_input_tokens": 131072,
                     "max_output_tokens": 131072,
                     "input_cost_per_token": 5e-6,
@@ -1222,12 +1136,10 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Grok 3 Mini",
                     "displayName": "Grok 3 Mini",
                     "submodels": [
                         "xai.grok-3-mini"
                     ],
-                    "max_tokens": 131072,
                     "max_input_tokens": 131072,
                     "max_output_tokens": 131072,
                     "input_cost_per_token": 3e-7,
@@ -1236,12 +1148,10 @@
                     "supports_vision": false
                 },
                 {
-                    "name": "Grok 3 Mini Fast",
                     "displayName": "Grok 3 Mini Fast",
                     "submodels": [
                         "xai.grok-3-mini-fast"
                     ],
-                    "max_tokens": 131072,
                     "max_input_tokens": 131072,
                     "max_output_tokens": 131072,
                     "input_cost_per_token": 6e-7,
