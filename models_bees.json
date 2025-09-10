@@ -1,0 +1,70 @@
+{
+  "providers": [
+    {
+      "name": "Bedrock",
+      "displayName": "AWS Bedrock",
+      "base_model_name": "bedrock",
+      "credentials_needed": {
+        "aws_region_name": {
+          "type": "string",
+          "displayName": "AWS Region Name",
+          "description": "AWS Region Name. Example: us-east-1, sa-east-1, etc.",
+          "required": true
+        },
+        "aws_access_key_id": {
+          "type": "string",
+          "displayName": "AWS Access Key ID",
+          "description": "AWS Access Key ID for account with permission to use Bedrock.",
+          "required": true
+        },
+        "aws_secret_access_key": {
+          "type": "string",
+          "displayName": "AWS Secret Access Key",
+          "description": "AWS Secret Access Key",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "Mistral 7B Instruct",
+          "submodels": [
+            "mistral.mistral-7b-instruct-v0:2"
+          ],
+          "max_input_tokens": 32000,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 2e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Mixtral 8x7B Instruct",
+          "submodels": [
+            "mistral.mixtral-8x7b-instruct-v0:1"
+          ],
+          "max_input_tokens": 32000,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 4.5e-07,
+          "output_cost_per_token": 7e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Mistral Large",
+          "submodels": [
+            "mistral.mistral-large-2402-v1:0"
+          ],
+          "max_input_tokens": 32000,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 8e-06,
+          "output_cost_per_token": 2.4e-05,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        }
+      ]
+    }
+  ]
+}

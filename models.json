@@ -330,6 +330,12 @@
       "displayName": "AWS Bedrock",
       "base_model_name": "bedrock",
       "credentials_needed": {
+        "aws_region_name": {
+          "type": "string",
+          "displayName": "AWS Region Name",
+          "description": "AWS Region Name. Example: us-east-1, sa-east-1, etc.",
+          "required": true
+        },
         "aws_access_key_id": {
           "type": "string",
           "displayName": "AWS Access Key ID",
