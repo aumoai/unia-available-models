@@ -28,8 +28,8 @@
       "credentials_needed": {
         "api_key": {
           "type": "string",
-          "displayName": "API Key",
-          "description": "OpenAI API Key",
+          "displayName": "Chave de API",
+          "description": "Chave de API da OpenAI",
           "required": true
         }
       },
@@ -332,20 +332,20 @@
       "credentials_needed": {
         "aws_region_name": {
           "type": "string",
-          "displayName": "AWS Region Name",
-          "description": "AWS Region Name. Example: us-east-1, sa-east-1, etc.",
+          "displayName": "Nome da Região",
+          "description": "Nome da Região da AWS. Por exemplo: us-east-1, sa-east-1, etc.",
           "required": true
         },
         "aws_access_key_id": {
           "type": "string",
-          "displayName": "AWS Access Key ID",
-          "description": "AWS Access Key ID for account with permission to use Bedrock.",
+          "displayName": "Access Key ID",
+          "description": "AWS Access Key ID da conta com permissão para usar o Bedrock. Garanta que deu as permissões corretas no IAM.",
           "required": true
         },
         "aws_secret_access_key": {
           "type": "string",
-          "displayName": "AWS Secret Access Key",
-          "description": "AWS Secret Access Key",
+          "displayName": "Secret Access Key",
+          "description": "Secret Access Key da AWS ",
           "required": true
         }
       },
@@ -724,14 +724,14 @@
       "credentials_needed": {
         "api_key": {
           "type": "string",
-          "displayName": "API Key",
-          "description": "Azure API Key",
+          "displayName": "Chave de API",
+          "description": "Chave de API da Azure AI",
           "required": true
         },
         "base_url": {
           "type": "string",
-          "displayName": "Base URL",
-          "description": "Azure AI Base URL",
+          "displayName": "URL Base",
+          "description": "Base URL da Azure AI",
           "required": true
         }
       },
@@ -1021,8 +1021,8 @@
       "credentials_needed": {
         "api_key": {
           "type": "string",
-          "displayName": "API Key",
-          "description": "Gemini API Key",
+          "displayName": "Chave de API",
+          "description": "Chaven de API do Estúdio de IA da Google",
           "required": true
         }
       },
@@ -1207,8 +1207,8 @@
       "credentials_needed": {
         "api_key": {
           "type": "string",
-          "displayName": "API Key",
-          "description": "Fireworks API Key",
+          "displayName": "Chave de API",
+          "description": "Chave de API do AumoGPT. Entrar em contato com o suporte da AUMO para obter uma chave de API.",
           "required": true
         }
       },
@@ -1300,26 +1300,26 @@
       "credentials_needed": {
         "key": {
           "type": "string",
-          "displayName": "Private Key",
-          "description": "Oracle Private Key",
+          "displayName": "Chave Privada",
+          "description": "Private Key da Oracle",
           "required": true
         },
         "user": {
           "type": "string",
-          "displayName": "User",
-          "description": "Oracle User",
+          "displayName": "Usuário",
+          "description": "ID do Usuário da Oracle",
           "required": true
         },
         "region": {
           "type": "string",
-          "displayName": "Region",
-          "description": "Oracle Region",
+          "displayName": "Região",
+          "description": "Nome da Região da Oracle",
           "required": true
         },
         "tenancy": {
           "type": "string",
           "displayName": "Tenancy",
-          "description": "Oracle Tenancy",
+          "description": "O ID do Tenant da Oracle",
           "required": true
         },
         "fingerprint": {

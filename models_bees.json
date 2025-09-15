@@ -7,20 +7,20 @@
       "credentials_needed": {
         "aws_region_name": {
           "type": "string",
-          "displayName": "AWS Region Name",
-          "description": "AWS Region Name. Example: us-east-1, sa-east-1, etc.",
+          "displayName": "Nome da Região",
+          "description": "Nome da Região da AWS. Por exemplo: us-east-1, sa-east-1, etc.",
           "required": true
         },
         "aws_access_key_id": {
           "type": "string",
-          "displayName": "AWS Access Key ID",
-          "description": "AWS Access Key ID for account with permission to use Bedrock.",
+          "displayName": "Access Key ID",
+          "description": "AWS Access Key ID da conta com permissão para usar o Bedrock. Garanta que deu as permissões corretas no IAM.",
           "required": true
         },
         "aws_secret_access_key": {
           "type": "string",
-          "displayName": "AWS Secret Access Key",
-          "description": "AWS Secret Access Key",
+          "displayName": "Secret Access Key",
+          "description": "Secret Access Key da AWS ",
           "required": true
         }
       },
