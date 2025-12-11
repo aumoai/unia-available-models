@@ -1434,19 +1434,6 @@
           "status": "active"
         },
         {
-          "displayName": "AumoGPT Sabia",
-          "submodels": [
-            "accounts/admin-d353ad/deployedModels/sabia-70b-v1-wln07vkk"
-          ],
-          "max_input_tokens": 30720,
-          "max_output_tokens": 16384,
-          "input_cost_per_token": 1e-07,
-          "output_cost_per_token": 1e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
           "displayName": "Deepseek V3.1 Terminus",
           "submodels": [
             "deepseek-v3p1-terminus"
