@@ -322,6 +322,20 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
+        },
+        {
+          "displayName": "GPT 5.2",
+          "submodels": [
+            "gpt-5.2",
+            "gpt-5.2-2025-12-11"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1.75e-06,
+          "output_cost_per_token": 1.4e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
         }
       ]
     },
@@ -560,6 +574,71 @@
           "status": "active"
         },
         {
+          "displayName": "Claude Opus 4.5",
+          "submodels": [
+            "anthropic.claude-opus-4-5-20251101-v1:0"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Haiku 4.5",
+          "submodels": [
+            "anthropic.claude-haiku-4-5-20251001-v1:0"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 8192,
+          "input_cost_per_token": 1e-06,
+          "output_cost_per_token": 5e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Sonnet 4.5",
+          "submodels": [
+            "anthropic.claude-sonnet-4-5-20250929-v1:0"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Sonnet 4",
+          "submodels": [
+            "anthropic.claude-sonnet-4-20250514-v1:0"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Opus 4.1",
+          "submodels": [
+            "anthropic.claude-opus-4-1-20250805-v1:0"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
           "displayName": "Command Text",
           "submodels": [
             "cohere.command-text-v14"
@@ -711,6 +790,32 @@
           "max_output_tokens": 4096,
           "input_cost_per_token": 2e-06,
           "output_cost_per_token": 2e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Llama 4 Maverick 17B",
+          "submodels": [
+            "meta.llama4-maverick-17b-instruct-v1:0"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 8192,
+          "input_cost_per_token": 2.4e-07,
+          "output_cost_per_token": 9.7e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Llama 4 Scout 17B",
+          "submodels": [
+            "meta.llama4-scout-17b-instruct-v1:0"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 8192,
+          "input_cost_per_token": 1.7e-07,
+          "output_cost_per_token": 6.6e-07,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
