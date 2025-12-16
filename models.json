@@ -1513,9 +1513,9 @@
           "status": "active"
         },
         {
-          "displayName": "AumoGPT 7b",
+          "displayName": "Sabia 70b",
           "submodels": [
-            "accounts/admin-d353ad/deployedModels/aumogpt-7b-v1-hniaz8ub"
+            "accounts/admin-d353ad/deployedModels/sabia-70b-v3-wstoaf4b"
           ],
           "max_input_tokens": 30720,
           "max_output_tokens": 16384,
@@ -1523,7 +1523,7 @@
           "output_cost_per_token": 1e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "deprecated"
+          "status": "active"
         },
         {
           "displayName": "AumoGPT 70b",
