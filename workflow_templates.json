@@ -14,8 +14,8 @@
                         "source_id": "LLM",
                         "target_id": "output_node"
                     }
-                 ],
-               "nodes": [
+                ],
+                "nodes": [
                     {
                         "id": "input_node",
                         "title": "input_node",
@@ -39,7 +39,7 @@
                                 "saida": "LLM.completion.content"
                             }
                         },
-                            "node_type": "OutputNode",
+                        "node_type": "OutputNode",
                         "coordinates": {
                             "x": 1305.9011715853349,
                             "y": 406.30354291862
@@ -70,6 +70,275 @@
                         "coordinates": {
                             "x": 964.6480277647966,
                             "y": 407.10627125434604
+                        },
+                        "output_schema": {
+                            "completion": {
+                                "content": "string"
+                            }
+                        },
+                        "output_json_schema": "{\"completion\":{\"content\":\"string\"}}"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Extrator de CPF",
+            "description": "Envie arquivos para leitura da existencia de CPFs.",
+            "type": "basic",
+            "workflow": {
+                "links": [
+                    {
+                        "source_id": "LLM_1",
+                        "target_id": "output_node"
+                    },
+                    {
+                        "source_id": "input_node",
+                        "target_id": "Extrator_de_arquivos_1"
+                    },
+                    {
+                        "source_id": "Extrator_de_arquivos_1",
+                        "target_id": "Extrator_de_CPF_1"
+                    },
+                    {
+                        "source_id": "Extrator_de_CPF_1",
+                        "target_id": "LLM_1"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "input_node",
+                        "title": "input_node",
+                        "config": {
+                            "enforce_schema": false,
+                            "has_fixed_output": false
+                        },
+                        "node_type": "InputNode",
+                        "coordinates": {
+                            "x": -32.73405166444533,
+                            "y": 237.58973694664246
+                        },
+                        "output_schema": {
+                            "user_message": "text",
+                            "artifacts_ids": []
+                        },
+                        "output_json_schema": "{\"user_message\":\"text\",\"artifacts_ids\":[]}"
+                    },
+                    {
+                        "id": "output_node",
+                        "title": "Saída",
+                        "config": {
+                            "output_map": {
+                                "assistant_message": "LLM_1.completion.content"
+                            }
+                        },
+                        "node_type": "OutputNode",
+                        "coordinates": {
+                            "x": 1320.883221775677,
+                            "y": 240.23355604404435
+                        },
+                        "output_schema": {
+                            "assistant_message": "LLM_1.completion.content"
+                        },
+                        "output_json_schema": "{\"assistant_message\":\"LLM_1.completion.content\"}"
+                    },
+                    {
+                        "id": "LLM_1",
+                        "title": "LLM_1",
+                        "config": {
+                            "images": [],
+                            "llm_info": {
+                                "model": "",
+                                "top_p": 0.9,
+                                "temperature": 0.7,
+                                "max_completion_tokens": 16384
+                            },
+                            "json_output": null,
+                            "mcp_servers": [],
+                            "user_message": "{{Extrator_de_CPF_1.results}}\n\n{{input_node.user_message}}",
+                            "system_message": "You are a helpful assistant.",
+                            "message_history_variable": ""
+                        },
+                        "node_type": "SingleLLMCallNode",
+                        "coordinates": {
+                            "x": 957.5646312251008,
+                            "y": 244.61345430940207
+                        },
+                        "output_schema": {
+                            "completion": {
+                                "content": "string"
+                            }
+                        },
+                        "output_json_schema": "{\"completion\":{\"content\":\"string\"}}"
+                    },
+                    {
+                        "id": "Extrator_de_arquivos_1",
+                        "title": "Extrator_de_arquivos_1",
+                        "config": {
+                            "artifacts_ids_variable": "input_node.artifacts_ids"
+                        },
+                        "node_type": "FileExtractorNode",
+                        "coordinates": {
+                            "x": 306.97005933996945,
+                            "y": 233.65346984861378
+                        },
+                        "output_schema": {
+                            "contents": [{}],
+                            "artifacts_ids": []
+                        },
+                        "output_json_schema": "{\"contents\":[{}],\"artifacts_ids\":[]}"
+                    },
+                    {
+                        "id": "Extrator_de_CPF_1",
+                        "title": "Extrator_de_CPF_1",
+                        "config": {
+                            "artifacts_ids_variable": "Extrator_de_arquivos_1.contents"
+                        },
+                        "node_type": "CPFExtractorNode",
+                        "coordinates": {
+                            "x": 614.8149706973026,
+                            "y": 246.67472721075205
+                        },
+                        "output_schema": {
+                            "results": [{}]
+                        },
+                        "output_json_schema": "{\"results\":[{}]}"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Verificação de URL",
+            "description": "Verifique o status de uma URL e aja conforme o resultado.",
+            "type": "basic",
+            "workflow": {
+                "links": [
+                    {
+                        "source_id": "input_node",
+                        "target_id": "HTTPNode"
+                    },
+                    {
+                        "source_id": "HTTPNode",
+                        "target_id": "Condicional"
+                    },
+                    {
+                        "source_id": "Condicional",
+                        "target_id": "output_node"
+                    },
+                    {
+                        "source_id": "LLM",
+                        "target_id": "output_node"
+                    },
+                    {
+                        "source_id": "Condicional",
+                        "target_id": "LLM"
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "input_node",
+                        "title": "input_node",
+                        "config": {
+                            "enforce_schema": false,
+                            "has_fixed_output": false
+                        },
+                        "node_type": "InputNode",
+                        "coordinates": {
+                            "x": 201.86704848987733,
+                            "y": 177.05601363595784
+                        },
+                        "output_schema": {},
+                        "output_json_schema": "{}"
+                    },
+                    {
+                        "id": "output_node",
+                        "title": "Saída",
+                        "config": {
+                            "output_map": {
+                                "saida": "HTTPNode.status_code"
+                            }
+                        },
+                        "node_type": "OutputNode",
+                        "coordinates": {
+                            "x": 1549.0540240327105,
+                            "y": 183.48643363601596
+                        },
+                        "output_schema": {
+                            "saida": "number"
+                        },
+                        "output_json_schema": "{\"saida\":\"number\"}"
+                    },
+                    {
+                        "id": "HTTPNode",
+                        "title": "HTTPNode",
+                        "config": {
+                            "url": "https://aumo.ai",
+                            "body": null,
+                            "accept": "application/json",
+                            "method": "GET",
+                            "params": {},
+                            "headers": {},
+                            "content_type": "application/json"
+                        },
+                        "node_type": "HTTPNode",
+                        "coordinates": {
+                            "x": 506.193513564412,
+                            "y": 179.35601134392945
+                        },
+                        "output_schema": {
+                            "detail": {},
+                            "status_code": 200
+                        },
+                        "output_json_schema": "{\"status_code\":200,\"detail\":{}}"
+                    },
+                    {
+                        "id": "Condicional",
+                        "title": "Condicional",
+                        "config": {
+                            "default_node_id": "LLM",
+                            "condition_groups": [
+                                {
+                                    "group_id": "9e50d8e58cdf4acb84a94392e059211a",
+                                    "operator": "and",
+                                    "conditions": [
+                                        {
+                                            "value": "200",
+                                            "operator": "equals",
+                                            "variable": "{{HTTPNode.status_code}}"
+                                        }
+                                    ],
+                                    "target_node_id": "output_node"
+                                }
+                            ]
+                        },
+                        "node_type": "ConditionalNode",
+                        "coordinates": {
+                            "x": 833.7992682943424,
+                            "y": 179.5571464429365
+                        },
+                        "output_schema": {},
+                        "output_json_schema": "{}"
+                    },
+                    {
+                        "id": "LLM",
+                        "title": "LLM",
+                        "config": {
+                            "images": [],
+                            "llm_info": {
+                                "model": "",
+                                "top_p": 0.2,
+                                "temperature": 0.3,
+                                "max_completion_tokens": 8192
+                            },
+                            "json_output": null,
+                            "mcp_servers": [],
+                            "user_message": "",
+                            "system_message": "Verifique o que houve de errado com a chamada",
+                            "message_history_variable": ""
+                        },
+                        "node_type": "SingleLLMCallNode",
+                        "coordinates": {
+                            "x": 1232.6745427540577,
+                            "y": 343.9434646761115
                         },
                         "output_schema": {
                             "completion": {
