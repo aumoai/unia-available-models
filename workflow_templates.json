@@ -1,6 +1,8 @@
 {
     "templates": [
         {
+            "name": "Template básico",
+            "description": "Exemplo de template básico com uma chamada de LLM",
             "type": "basic",
             "links": [
                 {
