@@ -4,80 +4,82 @@
             "name": "Template básico",
             "description": "Exemplo de template básico com uma chamada de LLM",
             "type": "basic",
-            "links": [
-                {
-                    "source_id": "input_node",
-                    "target_id": "LLM"
-                },
-                {
-                    "source_id": "LLM",
-                    "target_id": "output_node"
-                }
-            ],
-            "nodes": [
-                {
-                    "id": "input_node",
-                    "title": "input_node",
-                    "config": {
-                        "enforce_schema": false,
-                        "has_fixed_output": false
+            "workflow": {
+                "links": [
+                    {
+                        "source_id": "input_node",
+                        "target_id": "LLM"
                     },
-                    "node_type": "InputNode",
-                    "coordinates": {
-                        "x": 648.710708583724,
-                        "y": 406.79568463536486
-                    },
-                    "output_schema": {},
-                    "output_json_schema": "{}"
-                },
-                {
-                    "id": "output_node",
-                    "title": "Saída",
-                    "config": {
-                        "output_map": {
-                            "saida": "LLM.completion.content"
-                        }
-                    },
-                    "node_type": "OutputNode",
-                    "coordinates": {
-                        "x": 1305.9011715853349,
-                        "y": 406.30354291862
-                    },
-                    "output_schema": {
-                        "saida": "unknown"
-                    },
-                    "output_json_schema": "{\"saida\":\"unknown\"}"
-                },
-                {
-                    "id": "LLM",
-                    "title": "LLM",
-                    "config": {
-                        "images": [],
-                        "llm_info": {
-                            "model": "",
-                            "top_p": 0.2,
-                            "temperature": 0.3,
-                            "max_completion_tokens": 131072
+                    {
+                        "source_id": "LLM",
+                        "target_id": "output_node"
+                    }
+                 ],
+               "nodes": [
+                    {
+                        "id": "input_node",
+                        "title": "input_node",
+                        "config": {
+                            "enforce_schema": false,
+                            "has_fixed_output": false
                         },
-                        "json_output": null,
-                        "mcp_servers": [],
-                        "user_message": "Como um workflow funciona?",
-                        "system_message": "",
-                        "message_history_variable": ""
+                        "node_type": "InputNode",
+                        "coordinates": {
+                            "x": 648.710708583724,
+                            "y": 406.79568463536486
+                        },
+                        "output_schema": {},
+                        "output_json_schema": "{}"
                     },
-                    "node_type": "SingleLLMCallNode",
-                    "coordinates": {
-                        "x": 964.6480277647966,
-                        "y": 407.10627125434604
+                    {
+                        "id": "output_node",
+                        "title": "Saída",
+                        "config": {
+                            "output_map": {
+                                "saida": "LLM.completion.content"
+                            }
+                        },
+                            "node_type": "OutputNode",
+                        "coordinates": {
+                            "x": 1305.9011715853349,
+                            "y": 406.30354291862
+                        },
+                        "output_schema": {
+                            "saida": "unknown"
+                        },
+                        "output_json_schema": "{\"saida\":\"unknown\"}"
                     },
-                    "output_schema": {
-                        "completion": {
-                            "content": "string"
-                        }
-                    },
-                    "output_json_schema": "{\"completion\":{\"content\":\"string\"}}"
-                }
-            ]
+                    {
+                        "id": "LLM",
+                        "title": "LLM",
+                        "config": {
+                            "images": [],
+                            "llm_info": {
+                                "model": "",
+                                "top_p": 0.2,
+                                "temperature": 0.3,
+                                "max_completion_tokens": 131072
+                            },
+                            "json_output": null,
+                            "mcp_servers": [],
+                            "user_message": "Como um workflow funciona?",
+                            "system_message": "",
+                            "message_history_variable": ""
+                        },
+                        "node_type": "SingleLLMCallNode",
+                        "coordinates": {
+                            "x": 964.6480277647966,
+                            "y": 407.10627125434604
+                        },
+                        "output_schema": {
+                            "completion": {
+                                "content": "string"
+                            }
+                        },
+                        "output_json_schema": "{\"completion\":{\"content\":\"string\"}}"
+                    }
+                ]
+            }
         }
     ]
 }
