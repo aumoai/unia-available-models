@@ -219,6 +219,19 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
+        },
+        {
+          "displayName": "Nemotron Nano 3 30B",
+          "submodels": [
+            "nvidia.nemotron-nano-3-30b"
+          ],
+          "max_input_tokens": 262144,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 1.5e-7,
+          "output_cost_per_token": 6e-7,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
         }
       ]
     }

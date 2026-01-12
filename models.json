@@ -365,84 +365,6 @@
       },
       "models": [
         {
-          "displayName": "Jamba Instruct",
-          "submodels": [
-            "ai21.jamba-instruct-v1:0"
-          ],
-          "max_input_tokens": 70000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 7e-07,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Jamba 1.5 Large",
-          "submodels": [
-            "ai21.jamba-1-5-large-v1:0"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 256000,
-          "input_cost_per_token": 2e-06,
-          "output_cost_per_token": 8e-06,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Jamba 1.5 Mini",
-          "submodels": [
-            "ai21.jamba-1-5-mini-v1:0"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 256000,
-          "input_cost_per_token": 2e-07,
-          "output_cost_per_token": 4e-07,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Titan Text Lite",
-          "submodels": [
-            "amazon.titan-text-lite-v1"
-          ],
-          "max_input_tokens": 42000,
-          "max_output_tokens": 4000,
-          "input_cost_per_token": 3e-07,
-          "output_cost_per_token": 4e-07,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Titan Text Express",
-          "submodels": [
-            "amazon.titan-text-express-v1"
-          ],
-          "max_input_tokens": 42000,
-          "max_output_tokens": 8000,
-          "input_cost_per_token": 1.3e-06,
-          "output_cost_per_token": 1.7e-06,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Titan Text Premier",
-          "submodels": [
-            "amazon.titan-text-premier-v1:0"
-          ],
-          "max_input_tokens": 42000,
-          "max_output_tokens": 32000,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 1.5e-06,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
           "displayName": "Mistral 7B Instruct",
           "submodels": [
             "mistral.mistral-7b-instruct-v0:2"
@@ -639,58 +561,6 @@
           "status": "active"
         },
         {
-          "displayName": "Command Text",
-          "submodels": [
-            "cohere.command-text-v14"
-          ],
-          "max_input_tokens": 4096,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.5e-06,
-          "output_cost_per_token": 2e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Command Light Text",
-          "submodels": [
-            "cohere.command-light-text-v14"
-          ],
-          "max_input_tokens": 4096,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 3e-07,
-          "output_cost_per_token": 6e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Command R+",
-          "submodels": [
-            "cohere.command-r-plus-v1:0"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-05,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Command R",
-          "submodels": [
-            "cohere.command-r-v1:0"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 1.5e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
           "displayName": "Llama3 8B Instruct",
           "submodels": [
             "meta.llama3-8b-instruct-v1:0"
@@ -853,8 +723,8 @@
           ],
           "max_input_tokens": 16384,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-6,
-          "output_cost_per_token": 3e-6,
+          "input_cost_per_token": 1.5e-7,
+          "output_cost_per_token": 6e-7,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -866,8 +736,73 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-6,
-          "output_cost_per_token": 3e-6,
+          "input_cost_per_token": 1.5e-7,
+          "output_cost_per_token": 6e-7,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Qwen3 Next 80B A3B",
+          "submodels": [
+            "qwen.qwen3-next-80b-a3b"
+          ],
+          "max_input_tokens": 262144,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 1.5e-7,
+          "output_cost_per_token": 1.2e-6,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Ministral 14B 3.0",
+          "submodels": [
+            "mistral.ministral-3-14b-instruct"
+          ],
+          "max_input_tokens": 262144,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 2e-7,
+          "output_cost_per_token": 2e-7,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "NVIDIA Nemotron Nano 2",
+          "submodels": [
+            "nvidia.nemotron-nano-9b-v2"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 6e-8,
+          "output_cost_per_token": 2.3e-7,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "NVIDIA Nemotron Nano 2 VL",
+          "submodels": [
+            "nvidia.nemotron-nano-12b-v2"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 2e-7,
+          "output_cost_per_token": 6e-7,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Nemotron Nano 3 30B",
+          "submodels": [
+            "nvidia.nemotron-nano-3-30b"
+          ],
+          "max_input_tokens": 262144,
+          "max_output_tokens": 8191,
+          "input_cost_per_token": 1.5e-7,
+          "output_cost_per_token": 6e-7,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
