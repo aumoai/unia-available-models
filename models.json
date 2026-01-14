@@ -1142,6 +1142,45 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
+        },
+        {
+          "displayName": "GPT 5",
+          "submodels": [
+            "gpt-5"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1.25e-06,
+          "output_cost_per_token": 1e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5 Mini",
+          "submodels": [
+            "gpt-5-mini"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2.5e-07,
+          "output_cost_per_token": 2e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5 Nano",
+          "submodels": [
+            "gpt-5-nano"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 5e-08,
+          "output_cost_per_token": 4e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
         }
       ]
     },
