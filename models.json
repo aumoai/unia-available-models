@@ -498,7 +498,7 @@
         {
           "displayName": "Claude Opus 4.5",
           "submodels": [
-            "anthropic.claude-opus-4-5-20251101-v1:0"
+            "arn:aws:bedrock:us-east-1:605575731210:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0"
           ],
           "max_input_tokens": 200000,
           "max_output_tokens": 16384,
@@ -511,7 +511,7 @@
         {
           "displayName": "Claude Haiku 4.5",
           "submodels": [
-            "anthropic.claude-haiku-4-5-20251001-v1:0"
+            "arn:aws:bedrock:us-east-1:605575731210:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0"
           ],
           "max_input_tokens": 200000,
           "max_output_tokens": 8192,
@@ -524,7 +524,7 @@
         {
           "displayName": "Claude Sonnet 4.5",
           "submodels": [
-            "anthropic.claude-sonnet-4-5-20250929-v1:0"
+            "arn:aws:bedrock:us-east-1:605575731210:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0"
           ],
           "max_input_tokens": 200000,
           "max_output_tokens": 16384,
@@ -537,7 +537,7 @@
         {
           "displayName": "Claude Sonnet 4",
           "submodels": [
-            "anthropic.claude-sonnet-4-20250514-v1:0"
+            "arn:aws:bedrock:us-east-1:605575731210:inference-profile/global.anthropic.claude-sonnet-4-20250514-v1:0"
           ],
           "max_input_tokens": 200000,
           "max_output_tokens": 16384,
