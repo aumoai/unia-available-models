@@ -1754,6 +1754,35 @@
           "status": "active"
         }
       ]
+    },
+    {
+      "name": "AUMO",
+      "displayName": "AUMO",
+      "base_model_name": "openai",
+      "credentials_needed": {
+        "api_key": {
+          "type": "string",
+          "displayName": "Chave de API",
+          "description": "Chave de API da AUMO",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "Avaliador de Ideia - Qwen3-4B",
+          "submodels": [
+            "qwen3-4b-finetuned"
+          ],
+          "max_tokens": 4096,
+          "max_input_tokens": 4096,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 0.0,
+          "output_cost_per_token": 0.0,
+          "supports_function_calling": false,
+          "supports_vision": false,
+          "status": "active"
+        }
+      ]
     }
   ]
 }
