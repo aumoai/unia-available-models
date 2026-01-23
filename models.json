@@ -498,6 +498,7 @@
         {
           "displayName": "Claude Opus 4.5",
           "submodels": [
+            "arn:aws:bedrock:us-east-1:605575731210:inference-profile/global.anthropic.claude-sonnet-4-5-20250929-v1:0",
             "anthropic.claude-opus-4-5-20251101-v1:0"
           ],
           "max_input_tokens": 200000,
