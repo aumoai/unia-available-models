@@ -1769,7 +1769,7 @@
       },
       "models": [
         {
-          "displayName": "Avaliador de Ideia - Qwen3-4B",
+          "displayName": "Qwen3-4B-aws-neuron",
           "submodels": [
             "qwen3-4b-finetuned"
           ],
