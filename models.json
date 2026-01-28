@@ -1756,7 +1756,7 @@
       ]
     },
     {
-      "name": "AUMO",
+      "name": "AUMO Neuron",
       "displayName": "AUMO Neuron",
       "base_model_name": "openai",
       "credentials_needed": {
