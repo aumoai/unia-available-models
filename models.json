@@ -1757,7 +1757,7 @@
     },
     {
       "name": "AUMO",
-      "displayName": "AUMO",
+      "displayName": "AUMO Neuron",
       "base_model_name": "openai",
       "credentials_needed": {
         "api_key": {
