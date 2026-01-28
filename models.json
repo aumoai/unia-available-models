@@ -1771,7 +1771,7 @@
         {
           "displayName": "Qwen3-4B-aws-neuron",
           "submodels": [
-            "qwen3-4b-finetuned"
+            "qwen3-4b-aws-neuron"
           ],
           "max_tokens": 4096,
           "max_input_tokens": 4096,
