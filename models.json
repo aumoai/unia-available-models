@@ -572,7 +572,7 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
-        }
+        },
         {
           "displayName": "Llama3 8B Instruct",
           "submodels": [
