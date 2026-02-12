@@ -550,7 +550,7 @@
         {
           "displayName": "Claude Opus 4.1",
           "submodels": [
-            "anthropic.claude-opus-4-1-20250805-v1:0"
+            "us.anthropic.claude-opus-4-1-20250805-v1:0"
           ],
           "max_input_tokens": 200000,
           "max_output_tokens": 16384,
@@ -558,8 +558,21 @@
           "output_cost_per_token": 2.5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "deprecated"
+          "status": "active"
         },
+        {
+          "displayName": "Claude Opus 4.6",
+          "submodels": [
+            "us.anthropic.claude-opus-4-6-v1"
+          ],
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        }
         {
           "displayName": "Llama3 8B Instruct",
           "submodels": [
