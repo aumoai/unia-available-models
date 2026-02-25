@@ -15,7 +15,7 @@
           "max_output_tokens": 16384,
           "input_cost_per_token": 2.5e-06,
           "output_cost_per_token": 1e-05,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": true,
           "status": "active"
         }
@@ -54,9 +54,7 @@
           "displayName": "GPT-4o mini",
           "submodels": [
             "gpt-4o-mini",
-            "gpt-4o-mini-2024-07-18",
-            "gpt-4o-mini-2024-08-06",
-            "gpt-4o-mini-2024-05-13"
+            "gpt-4o-mini-2024-07-18"
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 16384,
@@ -77,7 +75,7 @@
           "input_cost_per_token": 1e-05,
           "output_cost_per_token": 3e-05,
           "supports_function_calling": true,
-          "supports_vision": true,
+          "supports_vision": false,
           "status": "active"
         },
         {
@@ -99,7 +97,6 @@
           "displayName": "GPT-4",
           "submodels": [
             "gpt-4",
-            "gpt-4-0314",
             "gpt-4-0613"
           ],
           "max_input_tokens": 8192,
@@ -111,40 +108,9 @@
           "status": "active"
         },
         {
-          "displayName": "GPT-4 32k",
-          "submodels": [
-            "gpt-4-32k",
-            "gpt-4-32k-0314",
-            "gpt-4-32k-0613"
-          ],
-          "max_input_tokens": 32768,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 6e-05,
-          "output_cost_per_token": 0.00012,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "GPT-4 Vision",
-          "submodels": [
-            "gpt-4-vision-preview",
-            "gpt-4-1106-vision-preview"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1e-05,
-          "output_cost_per_token": 3e-05,
-          "supports_function_calling": false,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
           "displayName": "GPT-3.5 Turbo",
           "submodels": [
             "gpt-3.5-turbo",
-            "gpt-3.5-turbo-0301",
-            "gpt-3.5-turbo-0613",
             "gpt-3.5-turbo-1106",
             "gpt-3.5-turbo-0125"
           ],
@@ -159,8 +125,7 @@
         {
           "displayName": "GPT-3.5 Turbo 16k",
           "submodels": [
-            "gpt-3.5-turbo-16k",
-            "gpt-3.5-turbo-16k-0613"
+            "gpt-3.5-turbo-16k"
           ],
           "max_input_tokens": 16385,
           "max_output_tokens": 4096,
@@ -180,34 +145,6 @@
           "max_output_tokens": 100000,
           "input_cost_per_token": 1.5e-05,
           "output_cost_per_token": 6e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "o1-preview",
-          "submodels": [
-            "o1-preview",
-            "o1-preview-2024-09-12"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 32768,
-          "input_cost_per_token": 1.5e-05,
-          "output_cost_per_token": 6e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "o1-mini",
-          "submodels": [
-            "o1-mini",
-            "o1-mini-2024-09-12"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 65536,
-          "input_cost_per_token": 1.1e-06,
-          "output_cost_per_token": 4.4e-06,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -235,7 +172,7 @@
           "max_output_tokens": 4096,
           "input_cost_per_token": 5e-06,
           "output_cost_per_token": 1.5e-05,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": true,
           "status": "active"
         },
@@ -373,7 +310,7 @@
           "max_output_tokens": 8191,
           "input_cost_per_token": 1.5e-07,
           "output_cost_per_token": 2e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
         },
@@ -386,7 +323,7 @@
           "max_output_tokens": 8191,
           "input_cost_per_token": 4.5e-07,
           "output_cost_per_token": 7e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
         },
@@ -548,19 +485,6 @@
           "status": "active"
         },
         {
-          "displayName": "Claude Opus 4.1",
-          "submodels": [
-            "us.anthropic.claude-opus-4-1-20250805-v1:0"
-          ],
-          "max_input_tokens": 200000,
-          "max_output_tokens": 16384,
-          "input_cost_per_token": 5e-06,
-          "output_cost_per_token": 2.5e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
           "displayName": "Claude Opus 4.6",
           "submodels": [
             "us.anthropic.claude-opus-4-6-v1"
@@ -634,7 +558,7 @@
           "max_output_tokens": 4096,
           "input_cost_per_token": 1e-07,
           "output_cost_per_token": 1e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
         },
@@ -647,7 +571,7 @@
           "max_output_tokens": 4096,
           "input_cost_per_token": 1.5e-07,
           "output_cost_per_token": 1.5e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
         },
@@ -678,40 +602,14 @@
           "status": "active"
         },
         {
-          "displayName": "Llama 4 Maverick 17B",
-          "submodels": [
-            "meta.llama4-maverick-17b-instruct-v1:0"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 2.4e-07,
-          "output_cost_per_token": 9.7e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Llama 4 Scout 17B",
-          "submodels": [
-            "meta.llama4-scout-17b-instruct-v1:0"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 1.7e-07,
-          "output_cost_per_token": 6.6e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
           "displayName": "OpenAI GPT OSS 120B",
           "submodels": [
             "openai.gpt-oss-120b-1:0"
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-6,
-          "output_cost_per_token": 3e-6,
+          "input_cost_per_token": 1e-06,
+          "output_cost_per_token": 3e-06,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -723,8 +621,8 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-6,
-          "output_cost_per_token": 3e-6,
+          "input_cost_per_token": 1e-06,
+          "output_cost_per_token": 3e-06,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -736,8 +634,8 @@
           ],
           "max_input_tokens": 16384,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1.5e-7,
-          "output_cost_per_token": 6e-7,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 6e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -749,8 +647,8 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1.5e-7,
-          "output_cost_per_token": 6e-7,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 6e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -762,8 +660,8 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1.5e-7,
-          "output_cost_per_token": 1.2e-6,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 1.2e-06,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -775,8 +673,8 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 2e-7,
-          "output_cost_per_token": 2e-7,
+          "input_cost_per_token": 2e-07,
+          "output_cost_per_token": 2e-07,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -788,9 +686,9 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 6e-8,
-          "output_cost_per_token": 2.3e-7,
-          "supports_function_calling": true,
+          "input_cost_per_token": 6e-08,
+          "output_cost_per_token": 2.3e-07,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
         },
@@ -801,9 +699,9 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 2e-7,
-          "output_cost_per_token": 6e-7,
-          "supports_function_calling": true,
+          "input_cost_per_token": 2e-07,
+          "output_cost_per_token": 6e-07,
+          "supports_function_calling": false,
           "supports_vision": true,
           "status": "active"
         },
@@ -814,8 +712,8 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1.5e-7,
-          "output_cost_per_token": 6e-7,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 6e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -842,10 +740,22 @@
       },
       "models": [
         {
-          "displayName": "Deepseek",
+          "displayName": "Deepseek R1",
           "submodels": [
-            "deepseek-r1",
-            "DeepSeek-V3.1"            
+            "deepseek-r1"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 8192,
+          "input_cost_per_token": 1.35e-06,
+          "output_cost_per_token": 5.4e-06,
+          "supports_function_calling": false,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Deepseek V3.1",
+          "submodels": [
+            "DeepSeek-V3.1"
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8192,
@@ -854,32 +764,6 @@
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
-        },
-        {
-          "displayName": "Deepseek V3",
-          "submodels": [
-            "deepseek-v3"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 1.35e-06,
-          "output_cost_per_token": 5.4e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Jamba Instruct",
-          "submodels": [
-            "jamba-instruct"
-          ],
-          "max_input_tokens": 70000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 7e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
         },
         {
           "displayName": "Mistral Nemo",
@@ -895,23 +779,8 @@
           "status": "deprecated"
         },
         {
-          "displayName": "Mistral Large",
-          "submodels": [
-            "mistral-large",
-            "mistral-large-2407"
-          ],
-          "max_input_tokens": 32000,
-          "max_output_tokens": 8191,
-          "input_cost_per_token": 4e-06,
-          "output_cost_per_token": 1.2e-05,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
           "displayName": "Mistral Small",
           "submodels": [
-            "mistral-small",
             "mistral-small-2503"
           ],
           "max_input_tokens": 32000,
@@ -931,7 +800,7 @@
           "max_output_tokens": 2048,
           "input_cost_per_token": 3.7e-07,
           "output_cost_per_token": 3.7e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": true,
           "status": "deprecated"
         },
@@ -949,19 +818,6 @@
           "status": "active"
         },
         {
-          "displayName": "Meta-Llama-3 70B Instruct",
-          "submodels": [
-            "Meta-Llama-3-70B-Instruct"
-          ],
-          "max_input_tokens": 8192,
-          "max_output_tokens": 2048,
-          "input_cost_per_token": 1.1e-06,
-          "output_cost_per_token": 3.7e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
           "displayName": "Meta-Llama-3.1 8B Instruct",
           "submodels": [
             "Meta-Llama-3.1-8B-Instruct"
@@ -970,20 +826,7 @@
           "max_output_tokens": 2048,
           "input_cost_per_token": 3e-07,
           "output_cost_per_token": 6.1e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Meta-Llama-3.1 70B Instruct",
-          "submodels": [
-            "Meta-Llama-3.1-70B-Instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 2048,
-          "input_cost_per_token": 2.68e-06,
-          "output_cost_per_token": 3.54e-06,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "deprecated"
         },
@@ -996,7 +839,7 @@
           "max_output_tokens": 2048,
           "input_cost_per_token": 5.33e-06,
           "output_cost_per_token": 1.6e-05,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "deprecated"
         },
@@ -1022,7 +865,7 @@
           "max_output_tokens": 4096,
           "input_cost_per_token": 0,
           "output_cost_per_token": 0,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": true,
           "status": "active"
         },
@@ -1035,100 +878,9 @@
           "max_output_tokens": 16384,
           "input_cost_per_token": 1.25e-07,
           "output_cost_per_token": 5e-07,
-          "supports_function_calling": true,
+          "supports_function_calling": false,
           "supports_vision": false,
           "status": "active"
-        },
-        {
-          "displayName": "Phi-3.5-mini-instruct",
-          "submodels": [
-            "Phi-3.5-mini-instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.3e-07,
-          "output_cost_per_token": 5.2e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3.5-vision-instruct",
-          "submodels": [
-            "Phi-3.5-vision-instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.3e-07,
-          "output_cost_per_token": 5.2e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3.5-MoE-instruct",
-          "submodels": [
-            "Phi-3.5-MoE-instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.6e-07,
-          "output_cost_per_token": 6.4e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3-mini-4k-instruct",
-          "submodels": [
-            "Phi-3-mini-4k-instruct"
-          ],
-          "max_input_tokens": 4096,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.3e-07,
-          "output_cost_per_token": 5.2e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3-mini-128k-instruct",
-          "submodels": [
-            "Phi-3-mini-128k-instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.3e-07,
-          "output_cost_per_token": 5.2e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3-small-8k-instruct",
-          "submodels": [
-            "Phi-3-small-8k-instruct"
-          ],
-          "max_input_tokens": 8192,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.5e-07,
-          "output_cost_per_token": 6e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Phi-3-small-128k-instruct",
-          "submodels": [
-            "Phi-3-small-128k-instruct"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.5e-07,
-          "output_cost_per_token": 6e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
         },
         {
           "displayName": "GPT-4o",
@@ -1225,19 +977,6 @@
           "status": "active"
         },
         {
-          "displayName": "Gemini 2.0 Flash Lite Preview",
-          "submodels": [
-            "gemini-2.0-flash-lite-preview-02-05"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 7.5e-08,
-          "output_cost_per_token": 3e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
           "displayName": "Gemini 2.0 Flash Lite",
           "submodels": [
             "gemini-2.0-flash-lite"
@@ -1249,149 +988,6 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
-        },
-        {
-          "displayName": "Gemini 2.0 Flash Exp",
-          "submodels": [
-            "gemini-2.0-flash-exp"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 0,
-          "output_cost_per_token": 0,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Gemini 2.0 Flash Thinking Exp",
-          "submodels": [
-            "gemini-2.0-flash-thinking-exp",
-            "gemini-2.0-flash-thinking-exp-01-21"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65536,
-          "input_cost_per_token": 0,
-          "output_cost_per_token": 0,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini 1.5 Flash",
-          "submodels": [
-            "gemini-1.5-flash",
-            "gemini-1.5-flash-002",
-            "gemini-1.5-flash-001",
-            "gemini-1.5-flash-latest"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 7.5e-08,
-          "output_cost_per_token": 3e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini 1.5 Flash 8B",
-          "submodels": [
-            "gemini-1.5-flash-8b",
-            "gemini-1.5-flash-8b-exp-0924",
-            "gemini-1.5-flash-8b-exp-0827"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 0,
-          "output_cost_per_token": 0,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini 1.5 Pro",
-          "submodels": [
-            "gemini-1.5-pro",
-            "gemini-1.5-pro-002",
-            "gemini-1.5-pro-001",
-            "gemini-1.5-pro-exp-0801",
-            "gemini-1.5-pro-exp-0827",
-            "gemini-1.5-pro-latest"
-          ],
-          "max_input_tokens": 2097152,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 3.5e-06,
-          "output_cost_per_token": 1.05e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini Pro Vision",
-          "submodels": [
-            "gemini-pro-vision"
-          ],
-          "max_input_tokens": 30720,
-          "max_output_tokens": 2048,
-          "input_cost_per_token": 3.5e-07,
-          "output_cost_per_token": 1.05e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini Gemma 2",
-          "submodels": [
-            "gemini-gemma-2-27b-it"
-          ],
-          "max_input_tokens": null,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 3.5e-07,
-          "output_cost_per_token": 1.05e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini Gemma 2 (9B)",
-          "submodels": [
-            "gemini-gemma-2-9b-it"
-          ],
-          "max_input_tokens": null,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 3.5e-07,
-          "output_cost_per_token": 1.05e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini 2.5 Pro Preview",
-          "submodels": [
-            "gemini-2.5-pro-preview-05-06",
-            "gemini-2.5-pro-preview-03-25"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65535,
-          "input_cost_per_token": 1.25e-06,
-          "output_cost_per_token": 1e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
-        },
-        {
-          "displayName": "Gemini 2.5 Flash Preview",
-          "submodels": [
-            "gemini-2.5-flash-preview-05-20",
-            "gemini-2.5-flash-preview-04-17"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65535,
-          "input_cost_per_token": 1.5e-07,
-          "output_cost_per_token": 6e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "deprecated"
         },
         {
           "displayName": "Gemini 2.5 Pro",
@@ -1474,32 +1070,6 @@
       },
       "models": [
         {
-          "displayName": "Llama-3.1 8B",
-          "submodels": [
-            "llama-v3p1-8b-instruct"
-          ],
-          "max_input_tokens": 16384,
-          "max_output_tokens": 16384,
-          "input_cost_per_token": 1e-07,
-          "output_cost_per_token": 1e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Deepseek v3",
-          "submodels": [
-            "deepseek-v3"
-          ],
-          "max_input_tokens": 128000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 9e-07,
-          "output_cost_per_token": 9e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "deprecated"
-        },
-        {
           "displayName": "GPT OSS 20B",
           "submodels": [
             "gpt-oss-20b"
@@ -1526,58 +1096,6 @@
           "status": "active"
         },
         {
-          "displayName": "Sabia 70b",
-          "submodels": [
-            "accounts/admin-d353ad/deployedModels/sabia-70b-v3-wstoaf4b"
-          ],
-          "max_input_tokens": 30720,
-          "max_output_tokens": 16384,
-          "input_cost_per_token": 1e-07,
-          "output_cost_per_token": 1e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "AumoGPT 70b",
-          "submodels": [
-            "accounts/admin-d353ad/deployedModels/aumogpt-70b-v1-cezpimyl"
-          ],
-          "max_input_tokens": 30720,
-          "max_output_tokens": 16384,
-          "input_cost_per_token": 1e-07,
-          "output_cost_per_token": 1e-07,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Deepseek V3.1 Terminus",
-          "submodels": [
-            "deepseek-v3p1-terminus"
-          ],
-          "max_input_tokens": 160000,
-          "max_output_tokens": 160000,
-          "input_cost_per_token": 5.6e-07, 
-          "output_cost_per_token": 1.68e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "GLM 4.6",
-          "submodels": [
-            "glm-4p6"
-          ],
-          "max_input_tokens": 198000,
-          "max_output_tokens": 198000,
-          "input_cost_per_token": 5.5e-07, 
-          "output_cost_per_token": 2.19e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
           "displayName": "Kimi K2 Instruct",
           "submodels": [
             "kimi-k2-instruct-0905"
@@ -1591,19 +1109,6 @@
           "status": "active"
         },
         {
-          "displayName": "Kimi K2.5",
-          "submodels": [
-            "accounts/fireworks/models/kimi-k2p5"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 32768,
-          "input_cost_per_token": 6e-07,
-          "output_cost_per_token": 3e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
           "displayName": "DeepSeek V3.1",
           "submodels": [
             "deepseek-v3p1"
@@ -1614,45 +1119,6 @@
           "output_cost_per_token": 1.68e-06,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Qwen3 235B A22B Thinking 2507",
-          "submodels": [
-            "qwen3-235b-a22b-thinking-2507"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 32768,
-          "input_cost_per_token": 2.2e-07,
-          "output_cost_per_token": 8.8e-07,
-          "supports_function_calling": false,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Qwen3 Coder 480B A35B Instruct",
-          "submodels": [
-            "qwen3-coder-480b-a35b-instruct"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 32768,
-          "input_cost_per_token": 4.5e-07,
-          "output_cost_per_token": 1.8e-06,
-          "supports_function_calling": true,
-          "supports_vision": false,
-          "status": "active"
-        },
-        {
-          "displayName": "Qwen3 VL 235B A22B Instruct",
-          "submodels": [
-            "qwen3-vl-235b-a22b-instruct"
-          ],
-          "max_input_tokens": 256000,
-          "max_output_tokens": 32768,
-          "input_cost_per_token": 2.2e-07,
-          "output_cost_per_token": 8.8e-07,
-          "supports_function_calling": true,
-          "supports_vision": true,
           "status": "active"
         },
         {
