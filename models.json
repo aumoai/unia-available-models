@@ -1303,63 +1303,6 @@
           "status": "active"
         },
         {
-          "displayName": "Claude 3 Opus",
-          "submodels": [
-            "claude-3-opus-20240229",
-            "claude-3-opus-latest"
-          ],
-          "max_input_tokens": 200000,
-          "max_output_tokens": 4096,
-          "input_cost_per_token": 1.5e-05,
-          "output_cost_per_token": 7.5e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Claude 3.5 Haiku",
-          "submodels": [
-            "claude-3-5-haiku-20241022",
-            "claude-3-5-haiku-latest"
-          ],
-          "max_input_tokens": 200000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 1e-06,
-          "output_cost_per_token": 5e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Claude 3.5 Sonnet",
-          "submodels": [
-            "claude-3-5-sonnet-20240620",
-            "claude-3-5-sonnet-20241022",
-            "claude-3-5-sonnet-latest"
-          ],
-          "max_input_tokens": 200000,
-          "max_output_tokens": 8192,
-          "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Claude 3.7 Sonnet",
-          "submodels": [
-            "claude-3-7-sonnet-20250219",
-            "claude-3-7-sonnet-latest"
-          ],
-          "max_input_tokens": 200000,
-          "max_output_tokens": 64000,
-          "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
           "displayName": "Claude 4 Opus",
           "submodels": [
             "claude-4-opus-20250514"
