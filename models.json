@@ -325,8 +325,8 @@
           ],
           "max_input_tokens": 400000,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 1.75e-06,
-          "output_cost_per_token": 1.4e-05,
+          "input_cost_per_token": 0.00000175,
+          "output_cost_per_token": 0.000014,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -847,7 +847,7 @@
           "output_cost_per_token": 5.4e-06,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Deepseek V3",
@@ -939,7 +939,7 @@
           "output_cost_per_token": 7.1e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Meta-Llama-3 70B Instruct",
@@ -1004,7 +1004,7 @@
           "output_cost_per_token": 0,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Phi-4-multimodal-instruct",
@@ -1017,7 +1017,7 @@
           "output_cost_per_token": 0,
           "supports_function_calling": false,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Phi-4",
@@ -1030,7 +1030,7 @@
           "output_cost_per_token": 5e-07,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Phi-3.5-mini-instruct",
@@ -1147,7 +1147,7 @@
           "output_cost_per_token": 6e-07,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "GPT 5",
@@ -1184,6 +1184,58 @@
           "max_output_tokens": 128000,
           "input_cost_per_token": 5e-08,
           "output_cost_per_token": 4e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.2",
+          "submodels": [
+            "gpt-5.2"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 0.00000175,
+          "output_cost_per_token": 0.000014,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.4",
+          "submodels": [
+            "gpt-5.4"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2.5e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "o3-mini",
+          "submodels": [
+            "o3-mini"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 100000,
+          "input_cost_per_token": 1.1e-06,
+          "output_cost_per_token": 8e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Kimi K2.5",
+          "submodels": [
+            "Kimi-K2.5"
+          ],
+          "max_input_tokens": 256000,
+          "max_output_tokens": 32768,
+          "input_cost_per_token": 6e-07,
+          "output_cost_per_token": 2.5e-06,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
