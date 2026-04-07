@@ -421,7 +421,7 @@
           "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Claude 3.5 Sonnet",
@@ -435,7 +435,7 @@
           "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Claude 3 Haiku",
@@ -448,7 +448,7 @@
           "output_cost_per_token": 1.25e-06,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Claude 3.5 Haiku",
@@ -461,7 +461,7 @@
           "output_cost_per_token": 4e-06,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Claude 3 Opus",
