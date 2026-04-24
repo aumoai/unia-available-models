@@ -91,7 +91,7 @@
           "output_cost_per_token": 3e-05,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "GPT-4",
@@ -630,7 +630,7 @@
           "output_cost_per_token": 1e-07,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 2-3B Instruct",
@@ -643,7 +643,7 @@
           "output_cost_per_token": 1.5e-07,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 2-11B Instruct",
@@ -656,7 +656,7 @@
           "output_cost_per_token": 3.5e-07,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 2-90B Instruct",
@@ -669,7 +669,7 @@
           "output_cost_per_token": 2e-06,
           "supports_function_calling": true,
           "supports_vision": true,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama 4 Maverick 17B",
@@ -1225,7 +1225,7 @@
           "output_cost_per_token": 8e-06,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Kimi K2.5",
@@ -1633,7 +1633,7 @@
           "output_cost_per_token": 2.5e-06,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Kimi K2.5",
