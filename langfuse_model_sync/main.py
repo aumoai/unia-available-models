@@ -7,6 +7,7 @@ import json
 LANGFUSE_URL = "https://langfuse.dev.unia.aumo.live"
 LANGFUSE_PUBLIC_KEY = ""
 LANGFUSE_SECRET_KEY = ""
+
 auth = (LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY)
 LANGFUSE_PAGE_LIMIT = 100
 
@@ -23,6 +24,11 @@ LITELLM_TO_LANFUSE_COST_NAMES = {
 
 BEDROCK_PROVIDER_NAMES = ["bedrock", "bedrock_converse"]
 OCI_PROVIDER_NAMES = ["oci"]
+AZURE_PROVIDER_NAMES = ["azure","azure_ai","azure_text"]
+ANTHROPIC_PROVIDER_NAMES = ["anthropic"]
+GOOGLE_PROVIDER_NAMES = ["gemini"]
+CURRENT_PROVIDERS = ["Azure","Oracle","Bedrock"]
+
 # ------------------------
 
 
@@ -59,7 +65,9 @@ def normalize_model(model):
     ↓
     anthropic.claude-3-sonnet-20240229-v1:0
     """
-    return model.split("/", 1)[1]
+    if '/' in model:
+        return model.split("/", 1)[1]
+    return model
 
 
 def extract_price(model):
@@ -135,22 +143,9 @@ def create_langfuse_model(model_name: str, model_data: dict):
     
     return payload["modelName"]
 
-# def filter_bedrock_models(litellm_models: dict) -> dict:
-#     bedrock_models = {}
-
-#     for model_name, model_data in litellm_models.items():
-#         provider = model_data.get("litellm_provider") or model_data.get("provider")
-
-#         if provider == "bedrock" or provider == "bedrock_converse":
-#             if not model_name.startswith("bedrock/"):
-#                 # providers = ["nvidia", "mistral", "openai", "anthropic","qwen","meta"]
-#                 # if any(p in model_name for p in providers):
-#                 bedrock_models[model_name] = model_data
-
-#     return bedrock_models
 
 def filter_models_by_provider(litellm_models: dict, provider_names: list) -> dict:
-    bedrock_models = {}
+    models = {}
 
     for model_name, model_data in litellm_models.items():
         provider = model_data.get("litellm_provider") or model_data.get("provider")
@@ -160,9 +155,9 @@ def filter_models_by_provider(litellm_models: dict, provider_names: list) -> dic
                 model_name = normalize_model(model_name)
                 # providers = ["nvidia", "mistral", "openai", "anthropic","qwen","meta"]
                 # if any(p in model_name for p in providers):
-            bedrock_models[model_name] = model_data
+            models[model_name] = model_data
 
-    return bedrock_models
+    return models
 
 def get_models():
     r = requests.get(
@@ -182,23 +177,17 @@ def delete_model(model_id):
         print("Erro:", r.text)
         r.raise_for_status()
 
+
 def find_unia_submodels(data):
-    stack = [data]
-    results = []
-
-    while stack:
-        current = stack.pop()
-
-        if isinstance(current, dict):
-            for k, v in current.items():
-                if k == "submodels":
-                    results.extend(v)
-                stack.append(v)
-
-        elif isinstance(current, list):
-            stack.extend(current)
-
+    results = {}
+    for provider in data["providers"]:
+        model_list = []
+        for model in provider["models"]:
+            if "status" in model and model["status"] == "active":
+                model_list.extend(submodel.lower() for submodel in model["submodels"])
+        results[provider["name"]] = {provider["base_model_name"] : model_list}
     return results
+
 
 def main():
 
@@ -206,8 +195,9 @@ def main():
     # Pode melhorar pegando direto do Github mas não fiz
     with open(UNIA_MODEL_FILE, "r") as f:
         unia_models_json = json.load(f)
-    unia_models_list = find_unia_submodels(unia_models_json)
-    # print(json.dumps(unia_models_list, indent=2))
+    # print(json.dumps(unia_models_json, indent=2))
+    unia_models_dict = find_unia_submodels(unia_models_json)
+    #print(json.dumps(unia_models_dict, indent=2))
 
     print("Baixando pricing LiteLLM...")
     litellm_pricing = get_pricing()
@@ -219,35 +209,73 @@ def main():
     oci_models = filter_models_by_provider(litellm_pricing,OCI_PROVIDER_NAMES)
     # print(json.dumps(oci_models, indent=2))
 
+    print("Filtrando Modelos Azure...")
+    azure_models = filter_models_by_provider(litellm_pricing,AZURE_PROVIDER_NAMES)
+
+    print("Filtrando Modelos Anthropic...")
+    anthropic_models = filter_models_by_provider(litellm_pricing,ANTHROPIC_PROVIDER_NAMES)
+
+    print("Filtrando Modelos Google...")
+    google_models = filter_models_by_provider(litellm_pricing,GOOGLE_PROVIDER_NAMES)
+    # print(json.dumps(oci_models, indent=2))
+
     print("Filtrando Modelos para modelos presentes no JSON de Modelos...")
+    all_unia_models = [
+        model
+        for group in unia_models_dict.values()
+        for models in group.values()
+        for model in models
+    ]
+    all_unia_providers = [
+        provider
+        for group in unia_models_dict.values()
+        for provider in group.keys()
+    ]
+
     filtered_models = {
         model: data
-        for models in (bedrock_models, oci_models)
+        for models in (bedrock_models, oci_models, azure_models, anthropic_models, google_models)
         for model, data in models.items()
-        if model in unia_models_list
+        if model in all_unia_models
+        if data["litellm_provider"] in all_unia_providers
     }
-    #print(json.dumps(filtered_models, indent=2))
+
+    ### É possível algum modelo que existe porém não no provedor correto que ofertamos, portanto:
+    true_filtered_models = deepcopy(filtered_models)
+
+    for model, data in filtered_models.items():
+        provider = data["litellm_provider"]
+        for provider_group in unia_models_dict.values():
+            for provider, models in provider_group.items():
+                if data["litellm_provider"] == provider and model not in models:
+                    true_filtered_models.pop(model, None)
+
+
+    #print(json.dumps(true_filtered_models, indent=2))
     
     print("Buscando modelos do Langfuse...")
     langfuse_models = get_langfuse_models()
 
     print("Removendo modelos já existentes no Langfuse...")
-    updated_models = deepcopy(filtered_models)
-    for model in filtered_models:
+    updated_models = deepcopy(true_filtered_models)
+    for model in true_filtered_models:
 
         # print(f"Model {model}")
         if model in langfuse_models:
             print(f"Modelo {model} já existe no Langfuse")
             updated_models.pop(model)
             continue
-        price = extract_price(filtered_models[model])
+        price = extract_price(true_filtered_models[model])
 
         if not price:
             print("Sem preço:", model)
             updated_models.pop(model)
             continue
 
-
+    for model in all_unia_models:
+        if model not in langfuse_models:
+            if model not in filtered_models:
+                print(f"Não será possível criar o modelo: {model} automaticamente no Langfuse,o preço no LiteLLM não existe ou provedor não foi incluso, provedores atuais : {CURRENT_PROVIDERS}!")
     # print(langfuse_models)
     # print(json.dumps(updated_models, indent=2))
 
@@ -257,9 +285,9 @@ def main():
         for model in updated_models:
             models_created.append(create_langfuse_model(model,updated_models[model]))
         
-        for model in unia_models_list:
+        for model in all_unia_models:
             if model not in models_created and model in updated_models:
-                print(f"{model} was not possible to be created on Langfuse")
+                print(f"Não foi possível criar o modelo: {model} no Langfuse")
 
         print(f"Models created : ")
         for i, m in enumerate(sorted(models_created), 1):
