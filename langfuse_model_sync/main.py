@@ -96,7 +96,7 @@ def build_langfuse_payload(model_name, model_data):
         if k in LITELLM_TO_LANFUSE_COST_NAMES:
             prices[LITELLM_TO_LANFUSE_COST_NAMES[k]] = float(value)
         else:
-            print("Nome do token não presente em LITELLM_TO_LANFUSE_COST_NAMES, custos podem ser afetados!")
+            print(f"Nome do token não presente em LITELLM_TO_LANFUSE_COST_NAMES, custos podem ser afetados! modelo : {model_name}")
             prices[k] = float(value)
 
     if not prices:
@@ -219,7 +219,7 @@ def main():
     oci_models = filter_models_by_provider(litellm_pricing,OCI_PROVIDER_NAMES)
     # print(json.dumps(oci_models, indent=2))
 
-    print("Filtrando Modelos Bedrock para modelos presentes no JSON de Modelos...")
+    print("Filtrando Modelos para modelos presentes no JSON de Modelos...")
     filtered_models = {
         model: data
         for models in (bedrock_models, oci_models)
