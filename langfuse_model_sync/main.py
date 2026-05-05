@@ -238,8 +238,8 @@ def main():
     # Pode melhorar pegando direto do Github mas não fiz
     with open(UNIA_MODEL_FILE, "r") as f:
         unia_models_json = json.load(f)
-    unia_models_dict = find_unia_submodels(unia_models_json)
 
+    unia_models_dict = find_unia_submodels(unia_models_json)
     providers_models = get_providers_models()
 
     print("Filtrando Modelos para modelos presentes no JSON de Modelos...")
