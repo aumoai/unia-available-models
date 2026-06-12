@@ -15,20 +15,21 @@ LITELLM_PRICING_URL = "https://raw.githubusercontent.com/BerriAI/litellm/main/mo
 UNIA_MODEL_FILE = "../models.json"
 
 LITELLM_TO_LANFUSE_COST_NAMES = {
-    "input_cost_per_token" : "input",
-    "output_cost_per_token" : "output",
-    "cache_read_input_token_cost" : "cache_read_input_tokens",
-    "cache_creation_input_token_cost" : "input_cache_creation",
-    "cache_creation_input_token_cost_above_1hr" : "input_cache_creation_1h",
+    "input_cost_per_token": "input",
+    "output_cost_per_token": "output",
+    "cache_read_input_token_cost": "cache_read_input_tokens",
+    "cache_creation_input_token_cost": "input_cache_creation",
+    "cache_creation_input_token_cost_above_1hr": "input_cache_creation_1h",
 }
 
 BEDROCK_PROVIDER_NAMES = ["bedrock", "bedrock_converse"]
 OCI_PROVIDER_NAMES = ["oci"]
-AZURE_PROVIDER_NAMES = ["azure","azure_ai","azure_text"]
+AZURE_PROVIDER_NAMES = ["azure", "azure_ai", "azure_text"]
 ANTHROPIC_PROVIDER_NAMES = ["anthropic"]
 GOOGLE_PROVIDER_NAMES = ["gemini"]
+VERTEX_PROVIDER_NAMES = ["vertex_ai", "vertex_ai_beta"]
 OPENAI_PROVIDER_NAMES = ["openai"]
-CURRENT_PROVIDERS = ["Azure","Oracle","Bedrock","Google","OpenAI"]
+CURRENT_PROVIDERS = ["Azure", "Oracle", "Bedrock", "Google", "Vertex AI", "OpenAI"]
 
 # ------------------------
 
@@ -54,6 +55,7 @@ def get_langfuse_models():
 
     return models
 
+
 def get_pricing():
     r = requests.get(LITELLM_PRICING_URL)
     r.raise_for_status()
@@ -66,7 +68,7 @@ def normalize_model(model):
     ↓
     anthropic.claude-3-sonnet-20240229-v1:0
     """
-    if '/' in model:
+    if "/" in model:
         return model.split("/", 1)[1]
     return model
 
@@ -77,7 +79,6 @@ def extract_price(model):
 
     input_cost = model.get("input_cost_per_token")
     output_cost = model.get("output_cost_per_token")
-
 
     if input_cost is None or output_cost is None:
         return None
@@ -99,13 +100,15 @@ def build_langfuse_payload(model_name, model_data):
 
         if isinstance(value, dict):
             value = value.get("price")
-        
+
         if value is None:
             continue
         if k in LITELLM_TO_LANFUSE_COST_NAMES:
             prices[LITELLM_TO_LANFUSE_COST_NAMES[k]] = float(value)
         else:
-            print(f"{k} não presente em LITELLM_TO_LANFUSE_COST_NAMES, custos podem ser afetados! modelo : {model_name}")
+            print(
+                f"{k} não presente em LITELLM_TO_LANFUSE_COST_NAMES, custos podem ser afetados! modelo : {model_name}"
+            )
             prices[k] = float(value)
 
     if not prices:
@@ -121,14 +124,14 @@ def build_langfuse_payload(model_name, model_data):
                 "isDefault": True,
                 "priority": 0,
                 "conditions": [],
-                "prices": prices
+                "prices": prices,
             }
-        ]
+        ],
     }
 
-def create_langfuse_model(model_name: str, model_data: dict):
 
-    payload = build_langfuse_payload(model_name,model_data)
+def create_langfuse_model(model_name: str, model_data: dict):
+    payload = build_langfuse_payload(model_name, model_data)
     # print(payload)
 
     try:
@@ -141,7 +144,7 @@ def create_langfuse_model(model_name: str, model_data: dict):
     except:
         print("Erro ao criar o modelo no langfuse!")
         return None
-    
+
     return payload["modelName"]
 
 
@@ -160,20 +163,15 @@ def filter_models_by_provider(litellm_models: dict, provider_names: list) -> dic
 
     return models
 
+
 def get_models():
-    r = requests.get(
-        f"{LANGFUSE_URL}/api/public/models",
-        auth=auth
-    )
+    r = requests.get(f"{LANGFUSE_URL}/api/public/models", auth=auth)
     r.raise_for_status()
     return r.json()["data"]
 
 
 def delete_model(model_id):
-    r = requests.delete(
-        f"{LANGFUSE_URL}/api/public/models/{model_id}",
-        auth=auth
-    )
+    r = requests.delete(f"{LANGFUSE_URL}/api/public/models/{model_id}", auth=auth)
     if r.status_code not in (200, 204):
         print("Erro:", r.text)
         r.raise_for_status()
@@ -196,44 +194,55 @@ def find_unia_submodels(data):
 
     return results
 
-def get_providers_models():
 
+def get_providers_models():
     print("Baixando pricing LiteLLM...")
     litellm_pricing = get_pricing()
 
     print("Filtrando Modelos Bedrock...")
-    bedrock_models = filter_models_by_provider(litellm_pricing,BEDROCK_PROVIDER_NAMES)
+    bedrock_models = filter_models_by_provider(litellm_pricing, BEDROCK_PROVIDER_NAMES)
 
     print("Filtrando Modelos OCI...")
-    oci_models = filter_models_by_provider(litellm_pricing,OCI_PROVIDER_NAMES)
+    oci_models = filter_models_by_provider(litellm_pricing, OCI_PROVIDER_NAMES)
     # print(json.dumps(oci_models, indent=2))
 
     print("Filtrando Modelos Azure...")
-    azure_models = filter_models_by_provider(litellm_pricing,AZURE_PROVIDER_NAMES)
+    azure_models = filter_models_by_provider(litellm_pricing, AZURE_PROVIDER_NAMES)
 
     print("Filtrando Modelos Anthropic...")
-    anthropic_models = filter_models_by_provider(litellm_pricing,ANTHROPIC_PROVIDER_NAMES)
+    anthropic_models = filter_models_by_provider(
+        litellm_pricing, ANTHROPIC_PROVIDER_NAMES
+    )
 
     print("Filtrando Modelos Google...")
-    google_models = filter_models_by_provider(litellm_pricing,GOOGLE_PROVIDER_NAMES)
+    google_models = filter_models_by_provider(litellm_pricing, GOOGLE_PROVIDER_NAMES)
     # print(json.dumps(oci_models, indent=2))
 
-    print("Filtrando Modelos OpenAI...")
-    openai_models = filter_models_by_provider(litellm_pricing,OPENAI_PROVIDER_NAMES)
-    #print(json.dumps(openai_models, indent=2))
+    print("Filtrando Modelos Vertex AI...")
+    vertex_models = filter_models_by_provider(litellm_pricing, VERTEX_PROVIDER_NAMES)
 
-    return {
-        **bedrock_models,
-        **oci_models,
-        **azure_models, 
-        **anthropic_models, 
-        **google_models, 
-        **openai_models,
-    }
+    print("Filtrando Modelos OpenAI...")
+    openai_models = filter_models_by_provider(litellm_pricing, OPENAI_PROVIDER_NAMES)
+    # print(json.dumps(openai_models, indent=2))
+
+    providers_models = {}
+    for provider_models in (
+        bedrock_models,
+        oci_models,
+        azure_models,
+        anthropic_models,
+        google_models,
+        vertex_models,
+        openai_models,
+    ):
+        for model_name, model_data in provider_models.items():
+            provider = model_data.get("litellm_provider") or model_data.get("provider")
+            providers_models[(model_name, provider)] = model_data
+
+    return providers_models
 
 
 def main():
-
     print("Lendo JSON de Modelos...")
     # Pode melhorar pegando direto do Github mas não fiz
     with open(UNIA_MODEL_FILE, "r") as f:
@@ -243,21 +252,21 @@ def main():
     providers_models = get_providers_models()
 
     print("Filtrando Modelos para modelos presentes no JSON de Modelos...")
-    filtered_models = {
-        model: data
-        for model, data in providers_models.items()
-        if model in unia_models_dict.keys()
-        if data["litellm_provider"] in unia_models_dict[model]
-    }
-    #print(json.dumps(filtered_models, indent=2))
-    
+    filtered_models = {}
+    for (model, provider), data in providers_models.items():
+        if model not in unia_models_dict.keys():
+            continue
+        if provider not in unia_models_dict[model]:
+            continue
+        filtered_models[model] = data
+    # print(json.dumps(filtered_models, indent=2))
+
     print("Buscando modelos do Langfuse...")
     langfuse_models = get_langfuse_models()
 
     print("Removendo modelos já existentes no Langfuse...")
     updated_models = deepcopy(filtered_models)
     for model in filtered_models:
-
         if model in langfuse_models:
             print(f"Modelo {model} já existe no Langfuse")
             updated_models.pop(model)
@@ -272,14 +281,16 @@ def main():
     for model in unia_models_dict.keys():
         if model not in langfuse_models:
             if model not in filtered_models:
-                print(f"Não será possível criar o modelo: {model} automaticamente no Langfuse,o preço no LiteLLM não existe ou provedor não foi incluso, provedores atuais : {CURRENT_PROVIDERS}!")
+                print(
+                    f"Não será possível criar o modelo: {model} automaticamente no Langfuse,o preço no LiteLLM não existe ou provedor não foi incluso, provedores atuais : {CURRENT_PROVIDERS}!"
+                )
 
     print("Criando Modelos no Langfuse...")
     if len(updated_models) > 0:
         models_created = []
         for model in updated_models:
-            models_created.append(create_langfuse_model(model,updated_models[model]))
-        
+            models_created.append(create_langfuse_model(model, updated_models[model]))
+
         for model in unia_models_dict.keys():
             if model not in models_created and model in updated_models:
                 print(f"Não foi possível criar o modelo: {model} no Langfuse")
@@ -289,7 +300,6 @@ def main():
             print(f"{i:2d}. {m}")
     else:
         print("Todos Modelos já estão na tabela de Modelos do Langfuse")
-
 
 
 if __name__ == "__main__":
