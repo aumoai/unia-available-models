@@ -1646,7 +1646,7 @@
         "vertex_credentials": {
           "type": "textarea",
           "displayName": "Credenciais Vertex AI",
-          "description": "JSON da service account ou configuração Workload Identity Federation",
+          "description": "JSON da service account do google com role 'Usuário da Plataforma de Agentes'",
           "required": true
         }
       },
@@ -1704,53 +1704,27 @@
           "status": "active"
         },
         {
-          "displayName": "Gemini 3 Flash Preview",
-          "submodels": [
-            "gemini-3-flash-preview"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65536,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 3e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Gemini 3.5 Flash",
-          "submodels": [
-            "gemini-3.5-flash"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65536,
-          "input_cost_per_token": 5e-07,
-          "output_cost_per_token": 3e-06,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
-          "displayName": "Gemini 3.1 Pro Preview",
-          "submodels": [
-            "gemini-3.1-pro-preview"
-          ],
-          "max_input_tokens": 1048576,
-          "max_output_tokens": 65536,
-          "input_cost_per_token": 2e-06,
-          "output_cost_per_token": 1.2e-05,
-          "supports_function_calling": true,
-          "supports_vision": true,
-          "status": "active"
-        },
-        {
           "displayName": "Claude Opus 4.8",
           "submodels": [
             "claude-opus-4-8"
           ],
-          "max_input_tokens": 1000000,
+          "max_input_tokens": 1048576,
           "max_output_tokens": 128000,
           "input_cost_per_token": 5e-06,
           "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Sonnet 4.6",
+          "submodels": [
+            "claude-sonnet-4-6"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -1760,10 +1734,10 @@
           "submodels": [
             "claude-fable-5"
           ],
-          "max_input_tokens": 1000000,
+          "max_input_tokens": 1048576,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 5e-06,
-          "output_cost_per_token": 2.5e-05,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"

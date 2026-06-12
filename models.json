@@ -1649,6 +1649,128 @@
       ]
     },
     {
+      "name": "Vertex AI",
+      "displayName": "Vertex AI",
+      "base_model_name": "vertex_ai",
+      "supported_apis": [
+        "chat_completions",
+        "responses"
+      ],
+      "credentials_needed": {
+        "vertex_project": {
+          "type": "string",
+          "displayName": "Google Cloud Project ID",
+          "description": "ID do projeto Google Cloud usado pelo Vertex AI",
+          "required": true
+        },
+        "vertex_location": {
+          "type": "string",
+          "displayName": "Região Vertex AI",
+          "description": "Região do Vertex AI, por exemplo us-central1 ou global",
+          "required": true
+        },
+        "vertex_credentials": {
+          "type": "textarea",
+          "displayName": "Credenciais Vertex AI",
+          "description": "JSON da service account do google com role 'Usuário da Plataforma de Agentes'",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "Gemini 2.5 Pro",
+          "submodels": [
+            "gemini-2.5-pro"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 1.25e-06,
+          "output_cost_per_token": 1e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 2.5 Flash",
+          "submodels": [
+            "gemini-2.5-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 3e-07,
+          "output_cost_per_token": 2.5e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 2.5 Flash Lite",
+          "submodels": [
+            "gemini-2.5-flash-lite"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 1e-07,
+          "output_cost_per_token": 4e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3 Pro Preview",
+          "submodels": [
+            "gemini-3-pro-preview"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 1.2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Opus 4.8",
+          "submodels": [
+            "claude-opus-4-8"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Sonnet 4.6",
+          "submodels": [
+            "claude-sonnet-4-6"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Fable 5",
+          "submodels": [
+            "claude-fable-5"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        }
+      ]
+    },
+    {
       "name": "Fireworks AI",
       "displayName": "AumoGPT",
       "base_model_name": "fireworks_ai",
