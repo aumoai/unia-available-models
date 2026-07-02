@@ -620,6 +620,19 @@
           "status": "active"
         },
         {
+          "displayName": "Claude Sonnet 5",
+          "submodels": [
+            "global.anthropic.claude-sonnet-5"
+          ],
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
           "displayName": "Claude Opus 4.1",
           "submodels": [
             "us.anthropic.claude-opus-4-1-20250805-v1:0"
@@ -667,6 +680,19 @@
           "max_output_tokens": 128000,
           "input_cost_per_token": 5e-06,
           "output_cost_per_token": 2.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Fable 5",
+          "submodels": [
+            "global.anthropic.claude-fable-5"
+          ],
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -1746,6 +1772,19 @@
           "displayName": "Claude Sonnet 4.6",
           "submodels": [
             "claude-sonnet-4-6"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Claude Sonnet 5",
+          "submodels": [
+            "claude-sonnet-5"
           ],
           "max_input_tokens": 1048576,
           "max_output_tokens": 128000,
