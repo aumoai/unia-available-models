@@ -236,7 +236,7 @@
       },
       "models": [
         {
-          "displayName": "Gemini 3.5 Flash",
+          "displayName": "Gemini 3.5 Flash Lite",
           "submodels": [
             "gemini-3.5-flash-lite"
           ],
