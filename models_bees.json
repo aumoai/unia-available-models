@@ -221,6 +221,60 @@
           "status": "active"
         }
       ]
+    },
+    {
+      "name": "Google AI",
+      "displayName": "Google AI",
+      "base_model_name": "gemini",
+      "credentials_needed": {
+        "api_key": {
+          "type": "string",
+          "displayName": "Chave de API",
+          "description": "Chaven de API do Estúdio de IA da Google",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "Gemini 3.5 Flash",
+          "submodels": [
+            "gemini-3.5-flash-lite"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 0.3e-06,
+          "output_cost_per_token": 2.5e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3.5 Flash",
+          "submodels": [
+            "gemini-3.5-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 1.5e-06,
+          "output_cost_per_token": 9e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3.6 Flash",
+          "submodels": [
+            "gemini-3.6-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 1.5e-06,
+          "output_cost_per_token": 7.5e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        }
+      ]
     }
   ]
 }
