@@ -408,6 +408,45 @@
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Sol",
+          "submodels": [
+            "gpt-5.6-sol"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 4e-06,
+          "output_cost_per_token": 2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Terra",
+          "submodels": [
+            "gpt-5.6-terra"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 1.2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Luna",
+          "submodels": [
+            "gpt-5.6-luna"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2e-07,
+          "output_cost_per_token": 1.2e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
         }
       ]
     },
@@ -2204,6 +2243,428 @@
           "output_cost_per_token": 4e-06,
           "supports_function_calling": true,
           "supports_vision": false,
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "name": "AUMO",
+      "displayName": "AUMO",
+      "base_model_name": "aumo",
+      "credentials_needed": {},
+      "models": [
+        {
+          "displayName": "GPT-4o",
+          "submodels": [
+            "aumo/gpt-4o",
+            "aumo/gpt-4o-2024-08-06",
+            "aumo/gpt-4o-2024-05-13",
+            "aumo/gpt-4o-2024-11-20"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 2.5e-06,
+          "output_cost_per_token": 1e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-4o mini",
+          "submodels": [
+            "aumo/gpt-4o-mini",
+            "aumo/gpt-4o-mini-2024-07-18"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 6e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-4 Turbo",
+          "submodels": [
+            "aumo/gpt-4-turbo",
+            "aumo/gpt-4-turbo-2024-04-09"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 3e-05,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-4 Turbo Preview",
+          "submodels": [
+            "aumo/gpt-4-turbo-preview",
+            "aumo/gpt-4-1106-preview",
+            "aumo/gpt-4-0125-preview"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 3e-05,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "inactive"
+        },
+        {
+          "displayName": "GPT-4",
+          "submodels": [
+            "aumo/gpt-4",
+            "aumo/gpt-4-0613"
+          ],
+          "max_input_tokens": 8192,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 3e-05,
+          "output_cost_per_token": 6e-05,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-4 32k",
+          "submodels": [
+            "aumo/gpt-4-32k",
+            "aumo/gpt-4-32k-0314",
+            "aumo/gpt-4-32k-0613"
+          ],
+          "max_input_tokens": 32768,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 6e-05,
+          "output_cost_per_token": 0.00012,
+          "supports_function_calling": false,
+          "supports_vision": false,
+          "status": "inactive"
+        },
+        {
+          "displayName": "GPT-4 Vision",
+          "submodels": [
+            "aumo/gpt-4-vision-preview",
+            "aumo/gpt-4-1106-vision-preview"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 1e-05,
+          "output_cost_per_token": 3e-05,
+          "supports_function_calling": false,
+          "supports_vision": true,
+          "status": "inactive"
+        },
+        {
+          "displayName": "GPT-3.5 Turbo",
+          "submodels": [
+            "aumo/gpt-3.5-turbo",
+            "aumo/gpt-3.5-turbo-1106",
+            "aumo/gpt-3.5-turbo-0125"
+          ],
+          "max_input_tokens": 4097,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 1.5e-06,
+          "output_cost_per_token": 2e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-3.5 Turbo 16k",
+          "submodels": [
+            "aumo/gpt-3.5-turbo-16k"
+          ],
+          "max_input_tokens": 16385,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 3e-06,
+          "output_cost_per_token": 4e-06,
+          "supports_function_calling": false,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "o1",
+          "submodels": [
+            "aumo/o1",
+            "aumo/o1-2024-12-17"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 100000,
+          "input_cost_per_token": 1.5e-05,
+          "output_cost_per_token": 6e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "o1-preview",
+          "submodels": [
+            "aumo/o1-preview",
+            "aumo/o1-preview-2024-09-12"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 32768,
+          "input_cost_per_token": 1.5e-05,
+          "output_cost_per_token": 6e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "inactive"
+        },
+        {
+          "displayName": "o1-mini",
+          "submodels": [
+            "aumo/o1-mini",
+            "aumo/o1-mini-2024-09-12"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 1.1e-06,
+          "output_cost_per_token": 4.4e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "inactive"
+        },
+        {
+          "displayName": "o3-mini",
+          "submodels": [
+            "aumo/o3-mini",
+            "aumo/o3-mini-2025-01-31"
+          ],
+          "max_input_tokens": 200000,
+          "max_output_tokens": 100000,
+          "input_cost_per_token": 1.1e-06,
+          "output_cost_per_token": 4.4e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "chatgpt-4o-latest",
+          "submodels": [
+            "aumo/chatgpt-4o-latest"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": false,
+          "supports_vision": true,
+          "status": "inactive"
+        },
+        {
+          "displayName": "GPT 4.1",
+          "submodels": [
+            "aumo/gpt-4.1",
+            "aumo/gpt-4.1-2025-04-14"
+          ],
+          "max_input_tokens": 1047576,
+          "max_output_tokens": 32768,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 8e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 4.1 Mini",
+          "submodels": [
+            "aumo/gpt-4.1-mini",
+            "aumo/gpt-4.1-mini-2025-04-14"
+          ],
+          "max_input_tokens": 1047576,
+          "max_output_tokens": 32768,
+          "input_cost_per_token": 4e-07,
+          "output_cost_per_token": 1.6e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 4.1 Nano",
+          "submodels": [
+            "aumo/gpt-4.1-nano",
+            "aumo/gpt-4.1-nano-2025-04-14"
+          ],
+          "max_input_tokens": 1047576,
+          "max_output_tokens": 32768,
+          "input_cost_per_token": 1e-07,
+          "output_cost_per_token": 4e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5",
+          "submodels": [
+            "aumo/gpt-5",
+            "aumo/gpt-5-2025-08-07"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1.25e-06,
+          "output_cost_per_token": 1e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5 Mini",
+          "submodels": [
+            "aumo/gpt-5-mini",
+            "aumo/gpt-5-mini-2025-08-07"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2.5e-07,
+          "output_cost_per_token": 2e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5 Nano",
+          "submodels": [
+            "aumo/gpt-5-nano",
+            "aumo/gpt-5-nano-2025-08-07"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 5e-08,
+          "output_cost_per_token": 4e-07,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.2",
+          "submodels": [
+            "aumo/gpt-5.2",
+            "aumo/gpt-5.2-2025-12-11"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 1.75e-06,
+          "output_cost_per_token": 1.4e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.4",
+          "submodels": [
+            "aumo/gpt-5.4"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2.5e-06,
+          "output_cost_per_token": 1.5e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.4 Mini",
+          "submodels": [
+            "aumo/gpt-5.4-mini"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 7.5e-07,
+          "output_cost_per_token": 4.5e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.4 Nano",
+          "submodels": [
+            "aumo/gpt-5.4-nano"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2e-07,
+          "output_cost_per_token": 1.25e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.4 Pro",
+          "submodels": [
+            "aumo/gpt-5.4-pro"
+          ],
+          "max_input_tokens": 400000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-05,
+          "output_cost_per_token": 0.00018,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.5",
+          "submodels": [
+            "aumo/gpt-5.5"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 3e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.5 Pro",
+          "submodels": [
+            "aumo/gpt-5.5-pro"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 3e-05,
+          "output_cost_per_token": 0.00018,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Sol",
+          "submodels": [
+            "aumo/gpt-5.6-sol"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 4e-06,
+          "output_cost_per_token": 2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Terra",
+          "submodels": [
+            "aumo/gpt-5.6-terra"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 1.2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT 5.6 Luna",
+          "submodels": [
+            "aumo/gpt-5.6-luna"
+          ],
+          "max_input_tokens": 1050000,
+          "max_output_tokens": 128000,
+          "input_cost_per_token": 2e-07,
+          "output_cost_per_token": 1.2e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
           "status": "active"
         }
       ]
