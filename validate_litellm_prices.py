@@ -10,6 +10,11 @@ Uso:
     python validate_litellm_prices.py --litellm-file litellm.json   # offline
     python validate_litellm_prices.py --strict             # nao encontrado tambem falha
 
+    python validate_litellm_prices.py --fix models_aws.json        # reescreve os precos
+
+Com `--fix`, so os numeros de `input_cost_per_token`/`output_cost_per_token` dos
+modelos divergentes sao trocados no texto do arquivo (formatacao preservada).
+
 Saida: 0 tudo igual; 1 divergencia (ou nao encontrado com --strict); 2 erro de uso/rede.
 """
 
@@ -18,6 +23,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import re
 import sys
 import urllib.request
 from dataclasses import dataclass
@@ -56,6 +62,7 @@ class Result:
     status: str  # ok | mismatch | not_found | no_price
     litellm_key: str | None = None
     detail: str = ""
+    costs: dict[str, float] | None = None  # campo -> valor no litellm (quando encontrado)
 
 
 def load_json(source: str) -> dict:
@@ -142,17 +149,79 @@ def validate_file(
                 if any(entry.get(field) is None for field in COST_FIELDS):
                     results.append(Result(path, base, submodel, "no_price", key))
                     continue
-                diffs = [
-                    f"{field.split('_')[0]}: unia={model.get(field)!r} litellm={entry[field]!r}"
+                costs = {field: float(entry[field]) for field in COST_FIELDS}
+                wrong = [
+                    field
                     for field in COST_FIELDS
                     if model.get(field) is None or not same(float(model[field]), float(entry[field]))
                 ]
+                diffs = [
+                    f"{field.split('_')[0]}: unia={model.get(field)!r} litellm={entry[field]!r}"
+                    for field in wrong
+                ]
                 results.append(
                     Result(
-                        path, base, submodel, "mismatch" if diffs else "ok", key, "; ".join(diffs)
+                        path,
+                        base,
+                        submodel,
+                        "mismatch" if diffs else "ok",
+                        key,
+                        "; ".join(diffs),
+                        costs,
                     )
                 )
     return results
+
+
+def fix_file(path: str, results: list[Result]) -> int:
+    """Troca no texto de `path` os custos divergentes pelos do LiteLLM.
+
+    Percorre os modelos na ordem do documento e casa a N-esima ocorrencia de cada
+    chave de custo com o N-esimo modelo que a tem, para preservar a formatacao.
+    Um modelo com varios submodelos tem um custo so (ver `fixes_by_model`).
+    """
+    text = Path(path).read_text(encoding="utf-8")
+    data = json.loads(text)
+    costs_by_submodel = {
+        (r.provider, r.submodel): r.costs for r in results if r.file == path and r.costs
+    }
+    models = [(p["base_model_name"], m) for p in data["providers"] for m in p["models"]]
+    fixes_by_model: dict[int, dict[str, float]] = {}
+    for position, (base, model) in enumerate(models):
+        # Um modelo com varios submodelos tem um preco so: usa o valor do LiteLLM
+        # que a maioria dos submodelos tem; empate mantem o valor atual.
+        found = [costs_by_submodel[(base, s)] for s in model["submodels"] if (base, s) in costs_by_submodel]
+        for field in COST_FIELDS:
+            values: list[float] = []
+            for costs in found:
+                if not any(same(costs[field], v) for v in values):
+                    values.append(costs[field])
+            if not values:
+                continue
+            votes = [sum(same(c[field], v) for c in found) for v in values]
+            best = max(votes)
+            winners = [v for v, n in zip(values, votes) if n == best]
+            current = model.get(field)
+            if current is not None and any(same(float(current), w) for w in winners):
+                continue
+            fixes_by_model.setdefault(position, {})[field] = winners[0]
+
+    changed = 0
+    for field in COST_FIELDS:
+        pattern = re.compile(rf'("{field}"\s*:\s*)([-+0-9.eE]+)')
+        owners = [i for i, (_, model) in enumerate(models) if field in model]
+        matches = list(pattern.finditer(text))
+        if len(matches) != len(owners):
+            raise SystemExit(f"{path}: {len(matches)} ocorrencias de {field} para {len(owners)} modelos")
+        for match, owner in reversed(list(zip(matches, owners))):
+            new = fixes_by_model.get(owner, {}).get(field)
+            if new is not None:
+                text = text[: match.start(2)] + json.dumps(new) + text[match.end(2) :]
+                changed += 1
+    Path(path).write_text(text, encoding="utf-8")
+    # A reescrita so mexe nos numeros: o JSON tem que continuar valido.
+    json.loads(text)
+    return changed
 
 
 def main() -> int:
@@ -163,6 +232,7 @@ def main() -> int:
     parser.add_argument("--include-inactive", action="store_true", help="valida status != active")
     parser.add_argument("--skip-provider", action="append", default=[], help="base_model_name")
     parser.add_argument("--json", action="store_true", help="saida em JSON")
+    parser.add_argument("--fix", action="store_true", help="reescreve os custos divergentes")
     args = parser.parse_args()
 
     base_dir = Path(__file__).parent
@@ -202,6 +272,11 @@ def main() -> int:
             f"\n{counts['ok']} ok, {counts['mismatch']} divergentes, "
             f"{counts['not_found']} nao encontrados, {counts['no_price']} sem preco no litellm"
         )
+
+    if args.fix:
+        total = sum(fix_file(path, results) for path in files if Path(path).is_file())
+        print(f"{total} valores de custo reescritos")
+        return 0
 
     failed = counts["mismatch"] > 0 or (args.strict and counts["not_found"] > 0)
     return 1 if failed else 0
