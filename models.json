@@ -39,13 +39,25 @@
           "submodels": [
             "gpt-4o",
             "gpt-4o-2024-08-06",
-            "gpt-4o-2024-05-13",
             "gpt-4o-2024-11-20"
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 16384,
           "input_cost_per_token": 2.5e-06,
           "output_cost_per_token": 1e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-4o (2024-05-13)",
+          "submodels": [
+            "gpt-4o-2024-05-13"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 16384,
+          "input_cost_per_token": 5e-06,
+          "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -140,12 +152,24 @@
           "displayName": "GPT-3.5 Turbo",
           "submodels": [
             "gpt-3.5-turbo",
-            "gpt-3.5-turbo-1106",
             "gpt-3.5-turbo-0125"
           ],
           "max_input_tokens": 4097,
           "max_output_tokens": 4096,
-          "input_cost_per_token": 1.5e-06,
+          "input_cost_per_token": 5e-07,
+          "output_cost_per_token": 1.5e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "GPT-3.5 Turbo (1106)",
+          "submodels": [
+            "gpt-3.5-turbo-1106"
+          ],
+          "max_input_tokens": 4097,
+          "max_output_tokens": 4096,
+          "input_cost_per_token": 1e-06,
           "output_cost_per_token": 2e-06,
           "supports_function_calling": true,
           "supports_vision": false,
@@ -547,8 +571,8 @@
           ],
           "max_input_tokens": 32000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 8e-06,
-          "output_cost_per_token": 2.4e-05,
+          "input_cost_per_token": 4e-06,
+          "output_cost_per_token": 1.2e-05,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -704,8 +728,8 @@
           ],
           "max_input_tokens": 1000000,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-05,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 1e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -730,8 +754,8 @@
           ],
           "max_input_tokens": 1000000,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 5e-06,
-          "output_cost_per_token": 2.5e-05,
+          "input_cost_per_token": 5.5e-06,
+          "output_cost_per_token": 2.75e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -743,8 +767,8 @@
           ],
           "max_input_tokens": 1000000,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 5e-06,
-          "output_cost_per_token": 2.5e-05,
+          "input_cost_per_token": 5.5e-06,
+          "output_cost_per_token": 2.75e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -756,8 +780,8 @@
           ],
           "max_input_tokens": 1000000,
           "max_output_tokens": 128000,
-          "input_cost_per_token": 5e-06,
-          "output_cost_per_token": 2.5e-05,
+          "input_cost_per_token": 5.5e-06,
+          "output_cost_per_token": 2.75e-05,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -875,8 +899,8 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 2048,
-          "input_cost_per_token": 9.9e-07,
-          "output_cost_per_token": 9.9e-07,
+          "input_cost_per_token": 7.2e-07,
+          "output_cost_per_token": 7.2e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -966,8 +990,8 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-06,
-          "output_cost_per_token": 3e-06,
+          "input_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 6e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -979,8 +1003,8 @@
           ],
           "max_input_tokens": 128000,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1e-06,
-          "output_cost_per_token": 3e-06,
+          "input_cost_per_token": 7e-08,
+          "output_cost_per_token": 3e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -1070,8 +1094,8 @@
           ],
           "max_input_tokens": 262144,
           "max_output_tokens": 8191,
-          "input_cost_per_token": 1.5e-07,
-          "output_cost_per_token": 6e-07,
+          "input_cost_per_token": 6e-08,
+          "output_cost_per_token": 2.4e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -1510,7 +1534,7 @@
           "max_input_tokens": 256000,
           "max_output_tokens": 32768,
           "input_cost_per_token": 6e-07,
-          "output_cost_per_token": 2.5e-06,
+          "output_cost_per_token": 3e-06,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -1837,8 +1861,8 @@
           ],
           "max_input_tokens": 1048576,
           "max_output_tokens": 65536,
-          "input_cost_per_token": 1.5e-06,
-          "output_cost_per_token": 7.5e-06,
+          "input_cost_per_token": 7.5e-07,
+          "output_cost_per_token": 3.75e-06,
           "supports_function_calling": true,
           "supports_vision": true,
           "status": "active"
@@ -2052,8 +2076,8 @@
           ],
           "max_input_tokens": 131072,
           "max_output_tokens": 131072,
-          "input_cost_per_token": 5e-08,
-          "output_cost_per_token": 2e-07,
+          "input_cost_per_token": 7e-08,
+          "output_cost_per_token": 3e-07,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -2268,7 +2292,7 @@
           "max_input_tokens": 128000,
           "max_output_tokens": 128000,
           "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
@@ -2281,7 +2305,7 @@
           "max_input_tokens": 131072,
           "max_output_tokens": 131072,
           "input_cost_per_token": 3e-06,
-          "output_cost_per_token": 1.5e-07,
+          "output_cost_per_token": 1.5e-05,
           "supports_function_calling": true,
           "supports_vision": false,
           "status": "active"
