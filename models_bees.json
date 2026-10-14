@@ -301,6 +301,89 @@
           "status": "active"
         }
       ]
+    },
+    {
+      "name": "Vertex AI",
+      "displayName": "Vertex AI",
+      "base_model_name": "vertex_ai",
+      "supported_apis": [
+        "chat_completions",
+        "responses"
+      ],
+      "credentials_needed": {
+        "vertex_project": {
+          "type": "string",
+          "displayName": "Google Cloud Project ID",
+          "description": "ID do projeto Google Cloud usado pelo Vertex AI",
+          "required": true
+        },
+        "vertex_location": {
+          "type": "string",
+          "displayName": "Região Vertex AI",
+          "description": "Região do Vertex AI, por exemplo us-central1 ou global",
+          "required": true
+        },
+        "vertex_credentials": {
+          "type": "textarea",
+          "displayName": "Credenciais Vertex AI",
+          "description": "JSON da service account do google com role 'Usuário da Plataforma de Agentes'",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "Gemini 3.6 Flash",
+          "submodels": [
+            "gemini-3.6-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 7.5e-07,
+          "output_cost_per_token": 3.75e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3.7 Flash",
+          "submodels": [
+            "gemini-3.7-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 0.75e-06,
+          "output_cost_per_token": 3.75e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3.8 Flash",
+          "submodels": [
+            "gemini-3.8-flash"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 0.75e-06,
+          "output_cost_per_token": 3.75e-06,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        },
+        {
+          "displayName": "Gemini 3 Pro Preview",
+          "submodels": [
+            "gemini-3-pro-preview"
+          ],
+          "max_input_tokens": 1048576,
+          "max_output_tokens": 65536,
+          "input_cost_per_token": 2e-06,
+          "output_cost_per_token": 1.2e-05,
+          "supports_function_calling": true,
+          "supports_vision": true,
+          "status": "active"
+        }
+      ]
     }
   ]
 }
