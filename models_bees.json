@@ -36,7 +36,7 @@
           "output_cost_per_token": 6e-07,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 70B Instruct",
@@ -49,7 +49,7 @@
           "output_cost_per_token": 3.5e-06,
           "supports_function_calling": false,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 1-8B Instruct",
@@ -62,7 +62,7 @@
           "output_cost_per_token": 2.2e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 1-70B Instruct",
@@ -75,7 +75,7 @@
           "output_cost_per_token": 7.2e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 2-1B Instruct",
@@ -88,7 +88,7 @@
           "output_cost_per_token": 1e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "Llama3 2-3B Instruct",
@@ -101,7 +101,7 @@
           "output_cost_per_token": 1.5e-07,
           "supports_function_calling": true,
           "supports_vision": false,
-          "status": "active"
+          "status": "inactive"
         },
         {
           "displayName": "OpenAI GPT OSS 120B",
