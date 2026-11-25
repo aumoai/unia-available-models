@@ -1495,6 +1495,7 @@
           "submodels": [
             "global.xai.grok-4.7"
           ],
+          "unsupported_params": ["temperature"],
           "max_input_tokens": 524288,
           "max_output_tokens": 524288,
           "input_cost_per_token": 2e-06,
