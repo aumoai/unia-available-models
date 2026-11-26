@@ -2,7 +2,9 @@
 """Valida que os custos dos models JSON da UNIA batem com o cost map do LiteLLM.
 
 O LiteLLM (`model_prices_and_context_window.json`) e a fonte da verdade. Para cada
-submodelo ativo, compara `input_cost_per_token` e `output_cost_per_token`.
+submodelo ativo, compara `input_cost_per_token` e `output_cost_per_token` e, quando o
+LiteLLM informa, o preco da entrada lida do cache (`cache_read_input_token_cost`) e da
+gravada no cache (`cache_creation_input_token_cost`).
 
 Uso:
     python validate_litellm_prices.py                      # models.json
@@ -11,9 +13,11 @@ Uso:
     python validate_litellm_prices.py --strict             # nao encontrado tambem falha
 
     python validate_litellm_prices.py --fix models_aws.json        # reescreve os precos
+    python validate_litellm_prices.py --fix --field cache_read_input_token_cost  # so um campo
 
-Com `--fix`, so os numeros de `input_cost_per_token`/`output_cost_per_token` dos
-modelos divergentes sao trocados no texto do arquivo (formatacao preservada).
+Com `--fix`, so os numeros dos custos divergentes sao trocados no texto do arquivo
+(formatacao preservada); o preco de cache que o modelo ainda nao tem entra logo depois
+de `output_cost_per_token`.
 
 Saida: 0 tudo igual; 1 divergencia (ou nao encontrado com --strict); 2 erro de uso/rede.
 """
@@ -41,17 +45,33 @@ LITELLM_PROVIDERS: dict[str, set[str]] = {
     "azure_ai": {"azure_ai"},
     "azure": {"azure", "azure_text"},
     "gemini": {"gemini"},
-    "vertex_ai": {"vertex_ai", "vertex_ai-language-models", "vertex_ai-chat-models"},
+    "vertex_ai": {
+        "vertex_ai",
+        "vertex_ai-language-models",
+        "vertex_ai-chat-models",
+        "vertex_ai-anthropic_models",
+    },
     "fireworks_ai": {"fireworks_ai"},
     "oci": {"oci"},
     "anthropic": {"anthropic"},
 }
-# Providers proprios da UNIA/AUMO: nao existem no LiteLLM, ficam fora da validacao.
-DEFAULT_SKIP_PROVIDERS = {"mock", "aumo"}
+# Providers proprios da UNIA/AUMO e os que o LiteLLM nao precifica (Maritaca, com
+# preco em R$ convertido a mao): ficam fora da validacao.
+DEFAULT_SKIP_PROVIDERS = {"mock", "aumo", "maritalk"}
 DEFAULT_SKIP_DISPLAY_NAMES = {"AUMO Neuron"}
 
 REL_TOL = 1e-9
 COST_FIELDS = ("input_cost_per_token", "output_cost_per_token")
+# Opcionais: nem todo modelo tem cache. Sao comparados quando o LiteLLM informa; preco
+# de cache que so o catalogo tem (Maritaca, por exemplo) nao e apagado.
+CACHE_COST_FIELDS = ("cache_read_input_token_cost", "cache_creation_input_token_cost")
+ALL_COST_FIELDS = COST_FIELDS + CACHE_COST_FIELDS
+FIELD_LABELS = {
+    "input_cost_per_token": "input",
+    "output_cost_per_token": "output",
+    "cache_read_input_token_cost": "cache_read",
+    "cache_creation_input_token_cost": "cache_creation",
+}
 
 
 @dataclass
@@ -149,14 +169,18 @@ def validate_file(
                 if any(entry.get(field) is None for field in COST_FIELDS):
                     results.append(Result(path, base, submodel, "no_price", key))
                     continue
-                costs = {field: float(entry[field]) for field in COST_FIELDS}
+                costs = {
+                    field: float(entry[field])
+                    for field in ALL_COST_FIELDS
+                    if entry.get(field) is not None
+                }
                 wrong = [
                     field
-                    for field in COST_FIELDS
-                    if model.get(field) is None or not same(float(model[field]), float(entry[field]))
+                    for field in costs
+                    if model.get(field) is None or not same(float(model[field]), costs[field])
                 ]
                 diffs = [
-                    f"{field.split('_')[0]}: unia={model.get(field)!r} litellm={entry[field]!r}"
+                    f"{FIELD_LABELS[field]}: unia={model.get(field)!r} litellm={entry[field]!r}"
                     for field in wrong
                 ]
                 results.append(
@@ -173,7 +197,9 @@ def validate_file(
     return results
 
 
-def fix_file(path: str, results: list[Result]) -> int:
+def fix_file(
+    path: str, results: list[Result], fields: tuple[str, ...] = ALL_COST_FIELDS
+) -> int:
     """Troca no texto de `path` os custos divergentes pelos do LiteLLM.
 
     Percorre os modelos na ordem do documento e casa a N-esima ocorrencia de cada
@@ -190,8 +216,11 @@ def fix_file(path: str, results: list[Result]) -> int:
     for position, (base, model) in enumerate(models):
         # Um modelo com varios submodelos tem um preco so: usa o valor do LiteLLM
         # que a maioria dos submodelos tem; empate mantem o valor atual.
-        found = [costs_by_submodel[(base, s)] for s in model["submodels"] if (base, s) in costs_by_submodel]
-        for field in COST_FIELDS:
+        found_all = [
+            costs_by_submodel[(base, s)] for s in model["submodels"] if (base, s) in costs_by_submodel
+        ]
+        for field in fields:
+            found = [costs for costs in found_all if field in costs]
             values: list[float] = []
             for costs in found:
                 if not any(same(costs[field], v) for v in values):
@@ -206,18 +235,42 @@ def fix_file(path: str, results: list[Result]) -> int:
                 continue
             fixes_by_model.setdefault(position, {})[field] = winners[0]
 
-    changed = 0
-    for field in COST_FIELDS:
+    edits: list[tuple[int, int, str]] = []
+    output_matches: dict[int, re.Match[str]] = {}
+    for field in ALL_COST_FIELDS:
         pattern = re.compile(rf'("{field}"\s*:\s*)([-+0-9.eE]+)')
         owners = [i for i, (_, model) in enumerate(models) if field in model]
         matches = list(pattern.finditer(text))
         if len(matches) != len(owners):
             raise SystemExit(f"{path}: {len(matches)} ocorrencias de {field} para {len(owners)} modelos")
-        for match, owner in reversed(list(zip(matches, owners))):
+        for match, owner in zip(matches, owners):
+            if field == "output_cost_per_token":
+                output_matches[owner] = match
             new = fixes_by_model.get(owner, {}).get(field)
-            if new is not None:
-                text = text[: match.start(2)] + json.dumps(new) + text[match.end(2) :]
-                changed += 1
+            if new is not None and field in models[owner][1]:
+                edits.append((match.start(2), match.end(2), json.dumps(new)))
+
+    # Preco de cache que o modelo ainda nao tem entra logo depois do preco de saida,
+    # com a mesma indentacao.
+    for owner, fixes in fixes_by_model.items():
+        missing = [f for f in CACHE_COST_FIELDS if f in fixes and f not in models[owner][1]]
+        if not missing:
+            continue
+        anchor = output_matches.get(owner)
+        if anchor is None:
+            raise SystemExit(f"{path}: modelo sem output_cost_per_token para ancorar {missing}")
+        indent = text[text.rfind("\n", 0, anchor.start()) + 1 : anchor.start()]
+        lines = [f'"{f}": {json.dumps(fixes[f])}' for f in missing]
+        end = anchor.end(2)
+        if text[end] == ",":
+            edits.append((end + 1, end + 1, "".join(f"\n{indent}{line}," for line in lines)))
+        else:
+            edits.append((end, end, "".join(f",\n{indent}{line}" for line in lines)))
+
+    changed = 0
+    for start, end, new in sorted(edits, reverse=True):
+        text = text[:start] + new + text[end:]
+        changed += new.count('": ') or 1
     Path(path).write_text(text, encoding="utf-8")
     # A reescrita so mexe nos numeros: o JSON tem que continuar valido.
     json.loads(text)
@@ -233,6 +286,12 @@ def main() -> int:
     parser.add_argument("--skip-provider", action="append", default=[], help="base_model_name")
     parser.add_argument("--json", action="store_true", help="saida em JSON")
     parser.add_argument("--fix", action="store_true", help="reescreve os custos divergentes")
+    parser.add_argument(
+        "--field",
+        action="append",
+        choices=ALL_COST_FIELDS,
+        help="com --fix, so reescreve este campo (repetivel; default: todos)",
+    )
     args = parser.parse_args()
 
     base_dir = Path(__file__).parent
@@ -274,7 +333,8 @@ def main() -> int:
         )
 
     if args.fix:
-        total = sum(fix_file(path, results) for path in files if Path(path).is_file())
+        fields = tuple(args.field) if args.field else ALL_COST_FIELDS
+        total = sum(fix_file(path, results, fields) for path in files if Path(path).is_file())
         print(f"{total} valores de custo reescritos")
         return 0
 
