@@ -3667,6 +3667,143 @@
           "status": "active"
         }
       ]
+    },
+    {
+      "name": "Maritaca AI",
+      "displayName": "Maritaca AI",
+      "base_model_name": "maritalk",
+      "credentials_needed": {
+        "api_key": {
+          "type": "string",
+          "displayName": "Chave de API",
+          "description": "Chave de API da Maritaca AI, criada em plataforma.maritaca.ai",
+          "required": true
+        }
+      },
+      "models": [
+        {
+          "displayName": "S5",
+          "submodels": [
+            "s5"
+          ],
+          "reasoning_effort_param": "extra_body.reasoning_effort",
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 64000,
+          "input_cost_per_token": 8.929e-08,
+          "output_cost_per_token": 4.464e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "S5 BR-SP",
+          "submodels": [
+            "s5-br-sp"
+          ],
+          "reasoning_effort_param": "extra_body.reasoning_effort",
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 64000,
+          "input_cost_per_token": 1.161e-07,
+          "output_cost_per_token": 5.804e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "S5 Nano",
+          "submodels": [
+            "s5-nano"
+          ],
+          "reasoning_effort_param": "extra_body.reasoning_effort",
+          "max_input_tokens": 256000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 1.786e-08,
+          "output_cost_per_token": 1.071e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiá 4 Thinking",
+          "submodels": [
+            "sabia-4-thinking"
+          ],
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 8.929e-07,
+          "output_cost_per_token": 7.143e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiá 4 Thinking BR-SP",
+          "submodels": [
+            "sabia-4-thinking-br-sp"
+          ],
+          "max_input_tokens": 1000000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 1.161e-06,
+          "output_cost_per_token": 9.286e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiá 4",
+          "submodels": [
+            "sabia-4",
+            "sabia-4-2026-01-06"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 8.929e-07,
+          "output_cost_per_token": 3.571e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiá 4 BR-SP",
+          "submodels": [
+            "sabia-4-br-sp"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 1.161e-06,
+          "output_cost_per_token": 4.643e-06,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiazinho 4",
+          "submodels": [
+            "sabiazinho-4",
+            "sabiazinho-4-2026-01-06"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 1.786e-07,
+          "output_cost_per_token": 7.143e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        },
+        {
+          "displayName": "Sabiazinho 4 BR-SP",
+          "submodels": [
+            "sabiazinho-4-br-sp"
+          ],
+          "max_input_tokens": 128000,
+          "max_output_tokens": 32000,
+          "input_cost_per_token": 2.321e-07,
+          "output_cost_per_token": 9.286e-07,
+          "supports_function_calling": true,
+          "supports_vision": false,
+          "status": "active"
+        }
+      ]
     }
   ]
 }
